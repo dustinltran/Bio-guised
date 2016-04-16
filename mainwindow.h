@@ -16,8 +16,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_LPinky_released();
-
     void on_LPinky_clicked();
 
 private:
