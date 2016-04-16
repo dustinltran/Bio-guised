@@ -20,4 +20,5 @@ HEADERS  += mainwindow.h \
     fingerprintscanpopup.h
 
 FORMS    += mainwindow.ui \
-    fingerprintscanpopup.ui
+    fingerprintscanpopup.ui \
+    bioguised.ui
