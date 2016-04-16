@@ -12,3 +12,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_LPinky_clicked()
+{
+    printf("Clicked");
+}

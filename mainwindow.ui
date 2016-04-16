@@ -239,15 +239,9 @@
      <x>0</x>
      <y>0</y>
      <width>569</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuBio_guisd">
-    <property name="title">
-     <string>Bio-guisd</string>
-    </property>
-   </widget>
-   <addaction name="menuBio_guisd"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
