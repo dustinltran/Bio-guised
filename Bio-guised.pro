@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    fingerprintscanpopup.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    fingerprintscanpopup.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    fingerprintscanpopup.ui
