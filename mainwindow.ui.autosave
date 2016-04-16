@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Bioguised</class>
+ <widget class="QMainWindow" name="Bioguised">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -180,7 +180,7 @@
    <widget class="QPushButton" name="CancelButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>20</x>
       <y>310</y>
       <width>75</width>
       <height>23</height>
@@ -188,6 +188,32 @@
     </property>
     <property name="text">
      <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Register Fingerprints</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>310</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
     </property>
    </widget>
    <zorder>LeftHand</zorder>
@@ -204,6 +230,8 @@
    <zorder>RIndex</zorder>
    <zorder>RegisterButton</zorder>
    <zorder>CancelButton</zorder>
+   <zorder>label</zorder>
+   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -214,6 +242,13 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuBio_guisd">
+    <property name="title">
+     <string>Bio-guisd</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuBio_guisd"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
