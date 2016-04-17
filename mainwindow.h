@@ -18,6 +18,8 @@ public:
 private slots:
     void on_LPinky_clicked();
 
+    void on_RegisterButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

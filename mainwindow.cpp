@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "bioguised.h"
+#include "fingerprintscanpopup.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,5 +17,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_LPinky_clicked()
 {
-    printf("Clicked");
+    FingerprintScanPopup *fingerprintScanPopup = new FingerprintScanPopup();
+    fingerprintScanPopup->show();
+}
+
+void MainWindow::on_RegisterButton_clicked()
+{
+    BioGuised *bioGuised = new BioGuised();
+    bioGuised->show();
 }
