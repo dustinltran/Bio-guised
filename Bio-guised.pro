@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     fingerprintscanpopup.cpp \
-    bioguised.cpp
+    bioguised.cpp \
+    biomodel.cpp
 
 HEADERS  += mainwindow.h \
     fingerprintscanpopup.h \
-    bioguised.h
+    bioguised.h \
+    biomodel.h
 
 FORMS    += mainwindow.ui \
     fingerprintscanpopup.ui \
