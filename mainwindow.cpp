@@ -23,6 +23,7 @@ void MainWindow::on_LPinky_clicked()
 
 void MainWindow::on_RegisterButton_clicked()
 {
+    MainWindow::close();
     BioGuised *bioGuised = new BioGuised();
     bioGuised->show();
 }

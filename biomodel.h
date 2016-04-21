@@ -1,11 +1,13 @@
 #ifndef BIOMODEL_H
 #define BIOMODEL_H
 
-
+#include <string>
+#include "Windows.h"
 class BioModel
 {
 public:
-    BioModel();
+    void addFile(LPCWSTR);
+    void deleteFile();
 };
 
 #endif // BIOMODEL_H

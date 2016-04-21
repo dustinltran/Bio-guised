@@ -15,6 +15,9 @@ public:
     explicit BioGuised(QWidget *parent = 0);
     ~BioGuised();
 
+private slots:
+    void on_addFile_clicked();
+
 private:
     Ui::BioGuised *ui;
 };

@@ -1,7 +1,0 @@
-#include "biomodel.h"
-#include "Windows.h"
-
-BioModel::BioModel()
-{
-    
-}
