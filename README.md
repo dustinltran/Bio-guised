@@ -1,4 +1,7 @@
 # Bio-guised
+
+IMPORTANT: This is for Windows platform only!
+
 Setup/Install
   Easy way:
   1.  Download zip file.
