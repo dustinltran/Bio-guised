@@ -3,11 +3,16 @@
 
 #include <string>
 #include "Windows.h"
+#include <QFileDialog>
+
 class BioModel
 {
 public:
-    void addFile(LPCWSTR);
+    void addFile(QString);
     void deleteFile();
+
+private:
+    std::string getCurrDirectory();
 };
 
 #endif // BIOMODEL_H

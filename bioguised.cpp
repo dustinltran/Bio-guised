@@ -18,10 +18,7 @@ BioGuised::~BioGuised()
 void BioGuised::on_addFile_clicked()
 {
     QString sourceFile = QFileDialog::getOpenFileName();
-    //printf(sourceFile.toStdString().c_str());
-    LPCWSTR srcFile = (const wchar_t*)sourceFile.utf16();
 
     BioModel* bioModel = new BioModel();
-    bioModel->addFile(srcFile);
-
+    bioModel->addFile(sourceFile);
 }
