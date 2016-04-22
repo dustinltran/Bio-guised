@@ -1,4 +1,4 @@
-# Bio-guisd
+# Bio-guised
 Setup/Install
   Easy way:
   1.  Download zip file.
