@@ -19,7 +19,8 @@ Setup/Install
   2.  Extract the files.
   3.  Navigate into the folder "Bio-guised".
   4.  Run "Bio-guised.exe"
-  5.  (Only if previous steps are not enough) download and install Visual C++ Redistributable 2015:   https://www.microsoft.com/en-us/download/details.aspx?id=48145
+  5.  (Only if steps 1-4 are not enough) download and install Visual C++ Redistributable 2015:   https://www.microsoft.com/en-us/download/details.aspx?id=48145
+  6.  (Only if steps 1-4 are not enough) retry step 4.
   
 Harder way:
   1.  Install Qt: https://www.qt.io/
