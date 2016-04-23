@@ -1,6 +1,17 @@
 # Bio-guised
-
-IMPORTANT: This is for Windows platform only!
+***********************************************************************************
+* Desccription: Application to create a multilevel security on a windows platform
+* Authors: Sam Rucker, Dustin Tran, Daniel Trebe
+* 
+* IMPORTANT: This is for Windows platform only!
+***********************************************************************************
+Parts Rquired:
+  Ardunio Uno Rev. 3
+  Breadboard
+  TTL Fingerprint Scanner
+  560 ohm resistor
+  1k ohm resistor
+  wires
 
 Setup/Install
   Easy way:
