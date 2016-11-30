@@ -1,0 +1,152 @@
+﻿Build started 10/19/2016 2:42:55 AM.
+     1>Project "C:\Users\smllt\Desktop\cryptopp565\cryptlib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D USE_PRECOMPILED_HEADERS /Gm- /EHsc /RTC1 /MTd /GS /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"Win32\cryptlib\Debug\cryptlib.pch" /Fo"Win32\cryptlib\Debug\\" /Fd"Win32\cryptlib\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:none cryptlib.cpp cbcmac.cpp fips140.cpp fipstest.cpp gcm.cpp md5.cpp rdrand.cpp sosemanuk.cpp
+         cryptlib.cpp
+         cbcmac.cpp
+         fips140.cpp
+         fipstest.cpp
+         gcm.cpp
+         md5.cpp
+         rdrand.cpp
+         sosemanuk.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D USE_PRECOMPILED_HEADERS /Gm- /EHsc /RTC1 /MTd /GS /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Win32\cryptlib\Debug\\" /Fd"Win32\cryptlib\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:none dll.cpp iterhash.cpp
+         dll.cpp
+         iterhash.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"Win32\Output\Debug\cryptlib.lib" /NOLOGO /MACHINE:X86 "Win32\cryptlib\Debug\\rdrand-x86.obj"
+         Win32\cryptlib\Debug\cryptlib.obj
+         Win32\cryptlib\Debug\cpu.obj
+         Win32\cryptlib\Debug\integer.obj
+         Win32\cryptlib\Debug\3way.obj
+         Win32\cryptlib\Debug\adler32.obj
+         Win32\cryptlib\Debug\algebra.obj
+         Win32\cryptlib\Debug\algparam.obj
+         Win32\cryptlib\Debug\arc4.obj
+         Win32\cryptlib\Debug\asn.obj
+         Win32\cryptlib\Debug\authenc.obj
+         Win32\cryptlib\Debug\base32.obj
+         Win32\cryptlib\Debug\base64.obj
+         Win32\cryptlib\Debug\basecode.obj
+         Win32\cryptlib\Debug\bfinit.obj
+         Win32\cryptlib\Debug\blake2.obj
+         Win32\cryptlib\Debug\blowfish.obj
+         Win32\cryptlib\Debug\blumshub.obj
+         Win32\cryptlib\Debug\camellia.obj
+         Win32\cryptlib\Debug\cast.obj
+         Win32\cryptlib\Debug\casts.obj
+         Win32\cryptlib\Debug\cbcmac.obj
+         Win32\cryptlib\Debug\ccm.obj
+         Win32\cryptlib\Debug\chacha.obj
+         Win32\cryptlib\Debug\channels.obj
+         Win32\cryptlib\Debug\cmac.obj
+         Win32\cryptlib\Debug\crc.obj
+         Win32\cryptlib\Debug\default.obj
+         Win32\cryptlib\Debug\des.obj
+         Win32\cryptlib\Debug\dessp.obj
+         Win32\cryptlib\Debug\dh.obj
+         Win32\cryptlib\Debug\dh2.obj
+         Win32\cryptlib\Debug\dll.obj
+         Win32\cryptlib\Debug\dsa.obj
+         Win32\cryptlib\Debug\eax.obj
+         Win32\cryptlib\Debug\ec2n.obj
+         Win32\cryptlib\Debug\ecp.obj
+         Win32\cryptlib\Debug\elgamal.obj
+         Win32\cryptlib\Debug\emsa2.obj
+         Win32\cryptlib\Debug\esign.obj
+         Win32\cryptlib\Debug\files.obj
+         Win32\cryptlib\Debug\filters.obj
+         Win32\cryptlib\Debug\fips140.obj
+         Win32\cryptlib\Debug\fipstest.obj
+         Win32\cryptlib\Debug\gcm.obj
+         Win32\cryptlib\Debug\gf256.obj
+         Win32\cryptlib\Debug\gf2_32.obj
+         Win32\cryptlib\Debug\gf2n.obj
+         Win32\cryptlib\Debug\gfpcrypt.obj
+         Win32\cryptlib\Debug\gost.obj
+         Win32\cryptlib\Debug\gzip.obj
+         Win32\cryptlib\Debug\hex.obj
+         Win32\cryptlib\Debug\hmac.obj
+         Win32\cryptlib\Debug\hrtimer.obj
+         Win32\cryptlib\Debug\ida.obj
+         Win32\cryptlib\Debug\idea.obj
+         Win32\cryptlib\Debug\iterhash.obj
+         Win32\cryptlib\Debug\keccak.obj
+         Win32\cryptlib\Debug\luc.obj
+         Win32\cryptlib\Debug\mars.obj
+         Win32\cryptlib\Debug\marss.obj
+         Win32\cryptlib\Debug\md2.obj
+         Win32\cryptlib\Debug\md4.obj
+         Win32\cryptlib\Debug\md5.obj
+         Win32\cryptlib\Debug\misc.obj
+         Win32\cryptlib\Debug\modes.obj
+         Win32\cryptlib\Debug\mqueue.obj
+         Win32\cryptlib\Debug\mqv.obj
+         Win32\cryptlib\Debug\nbtheory.obj
+         Win32\cryptlib\Debug\network.obj
+         Win32\cryptlib\Debug\oaep.obj
+         Win32\cryptlib\Debug\osrng.obj
+         Win32\cryptlib\Debug\panama.obj
+         Win32\cryptlib\Debug\pch.obj
+         Win32\cryptlib\Debug\pkcspad.obj
+         Win32\cryptlib\Debug\polynomi.obj
+         Win32\cryptlib\Debug\pssr.obj
+         Win32\cryptlib\Debug\pubkey.obj
+         Win32\cryptlib\Debug\queue.obj
+         Win32\cryptlib\Debug\rabin.obj
+         Win32\cryptlib\Debug\randpool.obj
+         Win32\cryptlib\Debug\rc2.obj
+         Win32\cryptlib\Debug\rc5.obj
+         Win32\cryptlib\Debug\rc6.obj
+         Win32\cryptlib\Debug\rdrand.obj
+         Win32\cryptlib\Debug\rdtables.obj
+         Win32\cryptlib\Debug\rijndael.obj
+         Win32\cryptlib\Debug\ripemd.obj
+         Win32\cryptlib\Debug\rng.obj
+         Win32\cryptlib\Debug\rsa.obj
+         Win32\cryptlib\Debug\rw.obj
+         Win32\cryptlib\Debug\safer.obj
+         Win32\cryptlib\Debug\salsa.obj
+         Win32\cryptlib\Debug\seal.obj
+         Win32\cryptlib\Debug\seed.obj
+         Win32\cryptlib\Debug\serpent.obj
+         Win32\cryptlib\Debug\sha.obj
+         Win32\cryptlib\Debug\sha3.obj
+         Win32\cryptlib\Debug\shacal2.obj
+         Win32\cryptlib\Debug\shark.obj
+         Win32\cryptlib\Debug\sharkbox.obj
+         Win32\cryptlib\Debug\simple.obj
+         Win32\cryptlib\Debug\skipjack.obj
+         Win32\cryptlib\Debug\socketft.obj
+         Win32\cryptlib\Debug\sosemanuk.obj
+         Win32\cryptlib\Debug\square.obj
+         Win32\cryptlib\Debug\squaretb.obj
+         Win32\cryptlib\Debug\strciphr.obj
+         Win32\cryptlib\Debug\tea.obj
+         Win32\cryptlib\Debug\tftables.obj
+         Win32\cryptlib\Debug\tiger.obj
+         Win32\cryptlib\Debug\tigertab.obj
+         Win32\cryptlib\Debug\trdlocal.obj
+         Win32\cryptlib\Debug\ttmac.obj
+         Win32\cryptlib\Debug\twofish.obj
+         Win32\cryptlib\Debug\vmac.obj
+         Win32\cryptlib\Debug\wait.obj
+         Win32\cryptlib\Debug\wake.obj
+         Win32\cryptlib\Debug\whrlpool.obj
+         Win32\cryptlib\Debug\winpipes.obj
+         Win32\cryptlib\Debug\xtr.obj
+         Win32\cryptlib\Debug\xtrcrypt.obj
+         Win32\cryptlib\Debug\zdeflate.obj
+         Win32\cryptlib\Debug\zinflate.obj
+         Win32\cryptlib\Debug\zlib.obj
+     1>strciphr.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+     1>polynomi.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+     1>algebra.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+         cryptlib.vcxproj -> C:\Users\smllt\Desktop\cryptopp565\Win32\Output\Debug\cryptlib.lib
+     1>Done Building Project "C:\Users\smllt\Desktop\cryptopp565\cryptlib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.32
