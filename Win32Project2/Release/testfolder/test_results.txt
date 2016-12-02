@@ -1,0 +1,3392 @@
+C:\Python27\python.exe "C:/Users/smllt/Desktop/CS 156/homework5/autograder.py" -q q1
+Starting on 10-16 at 16:24:14
+
+Question q1
+===========
+
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Left', 'Center', 'Right']
+MIN of (2147483647, 'Stop') (3.0, 'Left')
+MIN of (3.0, 'Left') (12.0, 'Center')
+MIN of (3.0, 'Left') (8.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Left')
+MIN Actions: ['Left', 'Center', 'Right']
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MIN of (5.0, 'Left') (4.0, 'Center')
+MIN of (4.0, 'Center') (6.0, 'Right')
+MAX of (3.0, 'Left') (4.0, 'Center')
+MIN Actions: ['Left', 'Center', 'Right']
+MIN of (2147483647, 'Stop') (14.0, 'Left')
+MIN of (14.0, 'Left') (1.0, 'Center')
+MIN of (1.0, 'Center') (11.0, 'Right')
+MAX of (4.0, 'Center') (1.0, 'Center')
+action_to_take (4.0, 'Center')
+*** FAIL: test_cases\q1\0-lecture-6-tree.test
+***     Incorrect move for depth=2
+***         Student move: (4.0, 'Center')
+***         Optimal move: Center
+***     Tree:
+***                max
+***           /-/   |   \--\
+***          /      |       \
+***         /       |        \
+***      min1      min2      min3
+***       /|\      /|\       /|\ 
+***      / | \    / | \     / | \
+***     A  B  C  D  E  F   G  H  I  
+***     3 12  8  5  4  6  14  1  11
+MAX Actions: ['pacLeft', 'pacRight']
+MIN Actions: ['gLeft', 'gRight']
+MIN of (2147483647, 'Stop') (4.0, 'gLeft')
+MIN of (4.0, 'gLeft') (3.0, 'gRight')
+MAX of (-2147483647, 'Stop') (3.0, 'gRight')
+MIN Actions: ['gLeft', 'gRight']
+MIN of (2147483647, 'Stop') (2.0, 'gLeft')
+MAX Actions: ['pacLeft']
+MAX of (-2147483647, 'Stop') (1000.0, 'pacLeft')
+MIN of (2.0, 'gLeft') (1000.0, 'pacLeft')
+MAX of (3.0, 'gRight') (2.0, 'gLeft')
+action_to_take (3.0, 'gRight')
+*** FAIL: test_cases\q1\0-small-tree.test
+***     Incorrect move for depth=3
+***         Student move: (3.0, 'gRight')
+***         Optimal move: pacLeft
+***     Tree:
+***             root
+***            /    \
+***      minLeft  minRight
+***       / \       /    \
+***      A   B     C   deeper
+***      4   3     2     |
+***                      D
+***                    1000
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MAX of (-3.0, 'Left') (-9.0, 'Right')
+MIN of (2147483647, 'Stop') (-3.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MAX of (10.0, 'Left') (6.0, 'Right')
+MIN of (-3.0, 'Left') (10.0, 'Left')
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (-3.01, 'Down')
+MIN of (2147483647, 'Stop') (-3.01, 'Down')
+MAX of (-3.0, 'Left') (-3.01, 'Down')
+action_to_take (-3.0, 'Left')
+*** FAIL: test_cases\q1\1-1-minmax.test
+***     Incorrect move for depth=3
+***         Student move: (-3.0, 'Left')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***        c1        c2             cx
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -3.01
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MAX of (-3.0, 'Left') (-9.0, 'Right')
+MIN of (2147483647, 'Stop') (-3.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MAX of (10.0, 'Left') (6.0, 'Right')
+MIN of (-3.0, 'Left') (10.0, 'Left')
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (-2.99, 'Down')
+MIN of (2147483647, 'Stop') (-2.99, 'Down')
+MAX of (-3.0, 'Left') (-2.99, 'Down')
+action_to_take (-2.99, 'Down')
+*** FAIL: test_cases\q1\1-2-minmax.test
+***     Incorrect move for depth=3
+***         Student move: (-2.99, 'Down')
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***        c1        c2             cx
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -2.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (4.01, 'Down')
+MIN of (2147483647, 'Stop') (4.01, 'Down')
+MAX of (-2147483647, 'Stop') (4.01, 'Down')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (-7.0, 'Right')
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (0.0, 'Left')
+MAX of (0.0, 'Left') (5.0, 'Right')
+MIN of (4.0, 'Left') (5.0, 'Right')
+MAX of (4.01, 'Down') (4.0, 'Left')
+action_to_take (4.01, 'Down')
+*** FAIL: test_cases\q1\1-3-minmax.test
+***     Incorrect move for depth=3
+***         Student move: (4.01, 'Down')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***             cx             c3        c4
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            4.01          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b2 is 4.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (3.99, 'Down')
+MIN of (2147483647, 'Stop') (3.99, 'Down')
+MAX of (-2147483647, 'Stop') (3.99, 'Down')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (-7.0, 'Right')
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (0.0, 'Left')
+MAX of (0.0, 'Left') (5.0, 'Right')
+MIN of (4.0, 'Left') (5.0, 'Right')
+MAX of (3.99, 'Down') (4.0, 'Left')
+action_to_take (4.0, 'Left')
+*** FAIL: test_cases\q1\1-4-minmax.test
+***     Incorrect move for depth=3
+***         Student move: (4.0, 'Left')
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***             cx             c3        c4
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            3.99          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b2 is 4.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (-3.0, 'Left')
+MIN of (-3.0, 'Left') (13.0, 'Right')
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MIN of (5.0, 'Left') (9.0, 'Right')
+MAX of (-3.0, 'Left') (5.0, 'Left')
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (10.0, 'Left')
+MIN of (10.0, 'Left') (3.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Right')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (-6.0, 'Left')
+MIN of (-6.0, 'Left') (8.0, 'Right')
+MAX of (3.0, 'Right') (-6.0, 'Left')
+MIN of (5.0, 'Left') (3.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Right')
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (3.01, 'Down')
+MAX of (-2147483647, 'Stop') (3.01, 'Down')
+MIN of (2147483647, 'Stop') (3.01, 'Down')
+MAX of (3.0, 'Right') (3.01, 'Down')
+action_to_take (3.01, 'Down')
+*** FAIL: test_cases\q1\1-5-minmax.test
+***     Incorrect move for depth=4
+***         Student move: (3.01, 'Down')
+***         Optimal move: Right
+***     Tree:
+***                  /-----a------\
+***                 /              \
+***                /                \
+***              b1                  b2
+***            /    \                |
+***         c1        c2             cx
+***        /  \      /  \            |
+***       d1   d2  d3   d4           dx
+***      / \  / \  / \  / \          |
+***      A B  C D  E F  G H          Z
+***     -3 13 5 9 10 3 -6 8        3.01
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     
+***     Note the minimax value of b1 is 3.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (-3.0, 'Left')
+MIN of (-3.0, 'Left') (13.0, 'Right')
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MIN of (5.0, 'Left') (9.0, 'Right')
+MAX of (-3.0, 'Left') (5.0, 'Left')
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (10.0, 'Left')
+MIN of (10.0, 'Left') (3.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Right')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (-6.0, 'Left')
+MIN of (-6.0, 'Left') (8.0, 'Right')
+MAX of (3.0, 'Right') (-6.0, 'Left')
+MIN of (5.0, 'Left') (3.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Right')
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (2.99, 'Down')
+MAX of (-2147483647, 'Stop') (2.99, 'Down')
+MIN of (2147483647, 'Stop') (2.99, 'Down')
+MAX of (3.0, 'Right') (2.99, 'Down')
+action_to_take (3.0, 'Right')
+*** FAIL: test_cases\q1\1-6-minmax.test
+***     Incorrect move for depth=4
+***         Student move: (3.0, 'Right')
+***         Optimal move: Left
+***     Tree:
+***                  /-----a------\
+***                 /              \
+***                /                \
+***              b1                  b2
+***            /    \                |
+***         c1        c2             cx
+***        /  \      /  \            |
+***       d1   d2  d3   d4           dx
+***      / \  / \  / \  / \          |
+***      A B  C D  E F  G H          Z
+***     -3 13 5 9 10 3 -6 8        2.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     
+***     Note the minimax value of b1 is 3.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (-1.99, 'Down')
+MIN of (2147483647, 'Stop') (-1.99, 'Down')
+MIN of (2147483647, 'Stop') (-1.99, 'Down')
+MAX of (-2147483647, 'Stop') (-1.99, 'Down')
+MIN Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-1.0, 'Left')
+MAX of (-1.0, 'Left') (-9.0, 'Right')
+MIN of (2147483647, 'Stop') (-1.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (7.0, 'Right')
+MIN of (-1.0, 'Left') (7.0, 'Right')
+MIN of (2147483647, 'Stop') (-1.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (2.0, 'Left')
+MAX of (2.0, 'Left') (5.0, 'Right')
+MIN of (2147483647, 'Stop') (5.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MAX of (-3.0, 'Left') (-2.0, 'Right')
+MIN of (5.0, 'Right') (-2.0, 'Right')
+MIN of (-1.0, 'Left') (-2.0, 'Right')
+MAX of (-1.99, 'Down') (-2.0, 'Right')
+action_to_take (-1.99, 'Down')
+*** FAIL: test_cases\q1\1-7-minmax.test
+***     Incorrect move for depth=4
+***         Student move: (-1.99, 'Down')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***             |                 /    \
+***             cx             c3        c4
+***             |             /   \     /   \
+***             dx           d5   d6   d7   d8
+***             |           / \  / \  / \  / \ 
+***             Z           I J  K L  M N  O P
+***          -1.99        -1 -9  4 7  2 5 -3 -2
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+***     
+***     Note that the minimax value of b2 is -2
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (-2.01, 'Down')
+MIN of (2147483647, 'Stop') (-2.01, 'Down')
+MIN of (2147483647, 'Stop') (-2.01, 'Down')
+MAX of (-2147483647, 'Stop') (-2.01, 'Down')
+MIN Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-1.0, 'Left')
+MAX of (-1.0, 'Left') (-9.0, 'Right')
+MIN of (2147483647, 'Stop') (-1.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (7.0, 'Right')
+MIN of (-1.0, 'Left') (7.0, 'Right')
+MIN of (2147483647, 'Stop') (-1.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (2.0, 'Left')
+MAX of (2.0, 'Left') (5.0, 'Right')
+MIN of (2147483647, 'Stop') (5.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MAX of (-3.0, 'Left') (-2.0, 'Right')
+MIN of (5.0, 'Right') (-2.0, 'Right')
+MIN of (-1.0, 'Left') (-2.0, 'Right')
+MAX of (-2.01, 'Down') (-2.0, 'Right')
+action_to_take (-2.0, 'Right')
+*** FAIL: test_cases\q1\1-8-minmax.test
+***     Incorrect move for depth=4
+***         Student move: (-2.0, 'Right')
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***             |                 /    \
+***             cx             c3        c4
+***             |             /   \     /   \
+***             dx           d5   d6   d7   d8 
+***             |           / \  / \  / \  / \ 
+***             Z           I J  K L  M N  O P
+***          -2.01        -1 -9  4 7  2 5 -3 -2
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+***     
+***     Note that the minimax value of b2 is -2.01
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (-4.0, 'Left')
+MIN of (-4.0, 'Left') (9.0, 'Right')
+MAX of (-2147483647, 'Stop') (-4.0, 'Left')
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (-4.01, 'Down')
+MAX of (-4.0, 'Left') (-4.01, 'Down')
+action_to_take (-4.0, 'Left')
+*** FAIL: test_cases\q1\2-1a-vary-depth.test
+***     Incorrect move for depth=1
+***         Student move: (-4.0, 'Left')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***     -4 c1        c2 9           cx -4.01
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -4.01
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3, but the depth=1 limited value is -4.
+***     The values next to c1, c2, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MAX of (-3.0, 'Left') (-9.0, 'Right')
+MIN of (2147483647, 'Stop') (-3.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MAX of (10.0, 'Left') (6.0, 'Right')
+MIN of (-3.0, 'Left') (10.0, 'Left')
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (-4.01, 'Down')
+MIN of (2147483647, 'Stop') (-4.01, 'Down')
+MAX of (-3.0, 'Left') (-4.01, 'Down')
+action_to_take (-3.0, 'Left')
+*** FAIL: test_cases\q1\2-1b-vary-depth.test
+***     Incorrect move for depth=2
+***         Student move: (-3.0, 'Left')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***     -4 c1        c2 9           cx -4.01
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -4.01
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3, but the depth=1 limited value is -4.
+***     The values next to c1, c2, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (-4.0, 'Left')
+MIN of (-4.0, 'Left') (9.0, 'Right')
+MAX of (-2147483647, 'Stop') (-4.0, 'Left')
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (-3.99, 'Down')
+MAX of (-4.0, 'Left') (-3.99, 'Down')
+action_to_take (-3.99, 'Down')
+*** FAIL: test_cases\q1\2-2a-vary-depth.test
+***     Incorrect move for depth=1
+***         Student move: (-3.99, 'Down')
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***     -4 c1        c2 9           cx -3.99
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -3.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3, but the depth=1 limited value is -4.
+***     The values next to c1, c2, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MAX of (-3.0, 'Left') (-9.0, 'Right')
+MIN of (2147483647, 'Stop') (-3.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MAX of (10.0, 'Left') (6.0, 'Right')
+MIN of (-3.0, 'Left') (10.0, 'Left')
+MAX of (-2147483647, 'Stop') (-3.0, 'Left')
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (-3.99, 'Down')
+MIN of (2147483647, 'Stop') (-3.99, 'Down')
+MAX of (-3.0, 'Left') (-3.99, 'Down')
+action_to_take (-3.0, 'Left')
+*** FAIL: test_cases\q1\2-2b-vary-depth.test
+***     Incorrect move for depth=2
+***         Student move: (-3.0, 'Left')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***     -4 c1        c2 9           cx -3.99
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -3.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3, but the depth=1 limited value is -4.
+***     The values next to c1, c2, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (5.01, 'Down')
+MAX of (-2147483647, 'Stop') (5.01, 'Down')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (8.0, 'Left')
+MIN of (8.0, 'Left') (5.0, 'Right')
+MAX of (5.01, 'Down') (5.0, 'Right')
+action_to_take (5.01, 'Down')
+*** FAIL: test_cases\q1\2-3a-vary-depth.test
+***     Incorrect move for depth=1
+***         Student move: (5.01, 'Down')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***      5.01   cx          8  c3        c4   5
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            5.01          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is 4, but the depth=1 limited value is 5.
+***     The values next to c3, c4, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (5.01, 'Down')
+MIN of (2147483647, 'Stop') (5.01, 'Down')
+MAX of (-2147483647, 'Stop') (5.01, 'Down')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (-7.0, 'Right')
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (0.0, 'Left')
+MAX of (0.0, 'Left') (5.0, 'Right')
+MIN of (4.0, 'Left') (5.0, 'Right')
+MAX of (5.01, 'Down') (4.0, 'Left')
+action_to_take (5.01, 'Down')
+*** FAIL: test_cases\q1\2-3b-vary-depth.test
+***     Incorrect move for depth=2
+***         Student move: (5.01, 'Down')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***      5.01   cx          8  c3        c4   5
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            5.01          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is 4, but the depth=1 limited value is 5.
+***     The values next to c3, c4, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (4.99, 'Down')
+MAX of (-2147483647, 'Stop') (4.99, 'Down')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (8.0, 'Left')
+MIN of (8.0, 'Left') (5.0, 'Right')
+MAX of (4.99, 'Down') (5.0, 'Right')
+action_to_take (5.0, 'Right')
+*** FAIL: test_cases\q1\2-4a-vary-depth.test
+***     Incorrect move for depth=1
+***         Student move: (5.0, 'Right')
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***      4.99   cx          8  c3        c4   5
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            4.99          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is 4, but the depth=1 limited value is 5.
+***     The values next to c3, c4, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MAX Actions: ['Down']
+MAX of (-2147483647, 'Stop') (4.99, 'Down')
+MIN of (2147483647, 'Stop') (4.99, 'Down')
+MAX of (-2147483647, 'Stop') (4.99, 'Down')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (-7.0, 'Right')
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (0.0, 'Left')
+MAX of (0.0, 'Left') (5.0, 'Right')
+MIN of (4.0, 'Left') (5.0, 'Right')
+MAX of (4.99, 'Down') (4.0, 'Left')
+action_to_take (4.99, 'Down')
+*** FAIL: test_cases\q1\2-4b-vary-depth.test
+***     Incorrect move for depth=2
+***         Student move: (4.99, 'Down')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***      4.99   cx          8  c3        c4   5
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            4.99          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is 4, but the depth=1 limited value is 5.
+***     The values next to c3, c4, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (3.0, 'Left')
+MAX of (3.0, 'Left') (9.0, 'Right')
+MIN of (2147483647, 'Stop') (9.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MAX of (10.0, 'Left') (6.0, 'Right')
+MIN of (9.0, 'Right') (10.0, 'Left')
+MAX of (-2147483647, 'Stop') (9.0, 'Right')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (7.0, 'Right')
+MIN of (2147483647, 'Stop') (7.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (0.0, 'Left')
+MAX of (0.0, 'Left') (5.0, 'Right')
+MIN of (7.0, 'Right') (5.0, 'Right')
+MAX of (9.0, 'Right') (5.0, 'Right')
+action_to_take (9.0, 'Right')
+*** FAIL: test_cases\q1\2-one-ghost-3level.test
+***     Incorrect move for depth=3
+***         Student move: (9.0, 'Right')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \              /    \
+***        c1        c2        c3        c4
+***       /  \      /  \      /   \     /   \
+***      d1   d2  d3   d4    d5   d6   d7   d8
+***      3    9   10   6     4    7    0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (3.0, 'Left')
+MIN of (3.0, 'Left') (13.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MIN of (5.0, 'Left') (9.0, 'Right')
+MAX of (3.0, 'Left') (5.0, 'Left')
+MIN of (2147483647, 'Stop') (5.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (10.0, 'Left')
+MIN of (10.0, 'Left') (11.0, 'Right')
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (6.0, 'Left')
+MIN of (6.0, 'Left') (8.0, 'Right')
+MAX of (10.0, 'Left') (6.0, 'Left')
+MIN of (5.0, 'Left') (10.0, 'Left')
+MAX of (-2147483647, 'Stop') (5.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (1.0, 'Left')
+MIN of (1.0, 'Left') (0.0, 'Right')
+MAX of (-2147483647, 'Stop') (0.0, 'Right')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MIN of (4.0, 'Left') (7.0, 'Right')
+MAX of (0.0, 'Right') (4.0, 'Left')
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (12.0, 'Left')
+MIN of (12.0, 'Left') (15.0, 'Right')
+MAX of (-2147483647, 'Stop') (12.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (2.0, 'Left')
+MIN of (2.0, 'Left') (14.0, 'Right')
+MAX of (12.0, 'Left') (2.0, 'Left')
+MIN of (4.0, 'Left') (12.0, 'Left')
+MAX of (5.0, 'Left') (4.0, 'Left')
+action_to_take (5.0, 'Left')
+*** FAIL: test_cases\q1\3-one-ghost-4level.test
+***     Incorrect move for depth=4
+***         Student move: (5.0, 'Left')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \              /    \
+***        c1        c2        c3        c4
+***       /  \      /  \      /   \     /   \
+***      d1   d2  d3   d4    d5   d6   d7   d8
+***     / \  / \  / \  / \   / \  / \  / \  / \ 
+***     A B  C D  E F  G H   I J  K L  M N  O P
+***     3 13 5 9 10 11 6 8   1 0  4 7 12 15 2 14
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (3.0, 'Left')
+MIN of (3.0, 'Left') (9.0, 'Right')
+MIN of (2147483647, 'Stop') (3.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (10.0, 'Left')
+MIN of (10.0, 'Left') (6.0, 'Right')
+MIN of (3.0, 'Left') (6.0, 'Right')
+MAX of (-2147483647, 'Stop') (3.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MIN of (4.0, 'Left') (7.0, 'Right')
+MIN of (2147483647, 'Stop') (4.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (0.0, 'Left')
+MIN of (0.0, 'Left') (5.0, 'Right')
+MIN of (4.0, 'Left') (0.0, 'Left')
+MAX of (3.0, 'Left') (0.0, 'Left')
+action_to_take (3.0, 'Left')
+*** FAIL: test_cases\q1\4-two-ghosts-3level.test
+***     Incorrect move for depth=3
+***         Student move: (3.0, 'Left')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \              /    \
+***        c1        c2        c3        c4
+***       /  \      /  \      /   \     /   \
+***      d1   d2  d3   d4    d5   d6   d7   d8
+***      3    9   10   6     4    7    0    5
+***     
+***     a - max
+***     b - min
+***     c - min
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (3.0, 'Left')
+MAX of (3.0, 'Left') (13.0, 'Right')
+MIN of (2147483647, 'Stop') (13.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (5.0, 'Left')
+MAX of (5.0, 'Left') (9.0, 'Right')
+MIN of (13.0, 'Right') (9.0, 'Right')
+MIN of (2147483647, 'Stop') (9.0, 'Right')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (10.0, 'Left')
+MAX of (10.0, 'Left') (11.0, 'Right')
+MIN of (2147483647, 'Stop') (11.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (6.0, 'Left')
+MAX of (6.0, 'Left') (8.0, 'Right')
+MIN of (11.0, 'Right') (8.0, 'Right')
+MIN of (9.0, 'Right') (8.0, 'Right')
+MAX of (-2147483647, 'Stop') (8.0, 'Right')
+MIN Actions: ['Left', 'Right']
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (1.0, 'Left')
+MAX of (1.0, 'Left') (0.0, 'Right')
+MIN of (2147483647, 'Stop') (1.0, 'Left')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (4.0, 'Left')
+MAX of (4.0, 'Left') (7.0, 'Right')
+MIN of (1.0, 'Left') (7.0, 'Right')
+MIN of (2147483647, 'Stop') (1.0, 'Left')
+MIN Actions: ['Left', 'Right']
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (12.0, 'Left')
+MAX of (12.0, 'Left') (15.0, 'Right')
+MIN of (2147483647, 'Stop') (15.0, 'Right')
+MAX Actions: ['Left', 'Right']
+MAX of (-2147483647, 'Stop') (2.0, 'Left')
+MAX of (2.0, 'Left') (14.0, 'Right')
+MIN of (15.0, 'Right') (14.0, 'Right')
+MIN of (1.0, 'Left') (14.0, 'Right')
+MAX of (8.0, 'Right') (1.0, 'Left')
+action_to_take (8.0, 'Right')
+*** FAIL: test_cases\q1\5-two-ghosts-4level.test
+***     Incorrect move for depth=4
+***         Student move: (8.0, 'Right')
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \              /    \
+***        c1        c2        c3        c4
+***       /  \      /  \      /   \     /   \
+***      d1   d2  d3   d4    d5   d6   d7   d8
+***     / \  / \  / \  / \   / \  / \  / \  / \ 
+***     A B  C D  E F  G H   I J  K L  M N  O P
+***     3 13 5 9 10 11 6 8   1 0  4 7 12 15 2 14
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+MAX Actions: ['Left', 'Right']
+MIN Actions: ['Down']
+MIN of (2147483647, 'Stop') (10.0, 'Down')
+MAX of (-2147483647, 'Stop') (10.0, 'Down')
+MIN Actions: ['Left', 'Right']
+MIN of (2147483647, 'Stop') (10.0, 'Left')
+MIN of (10.0, 'Left') (0.0, 'Right')
+MAX of (10.0, 'Down') (0.0, 'Right')
+action_to_take (10.0, 'Down')
+*** FAIL: test_cases\q1\6-tied-root.test
+***     Incorrect move for depth=3
+***         Student move: (10.0, 'Down')
+***         Optimal move: Left
+***     Tree:
+***         max
+***        /   \
+***     min1    min2
+***      |      /  \
+***      A      B   C
+***     10     10   0
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MAX of (-2147483647, 'Stop') (10.0, 'Center')
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (10.0, 'Center') (0.0, 'Center')
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (10.0, 'Center') (8.0, 'Center')
+action_to_take (10.0, 'Center')
+*** FAIL: test_cases\q1\7-1a-check-depth-one-ghost.test
+***     Incorrect move for depth=1
+***         Student move: (10.0, 'Center')
+***         Optimal move: Left
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***      10 c1    0 c2      c3 8
+***         |       |        |
+***       0 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1   10 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***         g1      g2      g3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     e - max
+***     f - min
+***     
+***     At depth 1, the evaluation function is called at level c,
+***     so Left should be returned. If your algorithm is returning a
+***     different action, check how you implemented your depth.
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MAX of (-2147483647, 'Stop') (10.0, 'Center')
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MAX of (0.0, 'Center') (10.0, 'Center')
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (-2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (10.0, 'Center') (8.0, 'Center')
+action_to_take (10.0, 'Center')
+*** FAIL: test_cases\q1\7-1b-check-depth-one-ghost.test
+***     Incorrect move for depth=2
+***         Student move: (10.0, 'Center')
+***         Optimal move: Center
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***      10 c1    0 c2      c3 8
+***         |       |        |
+***       0 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1   10 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***         g1      g2      g3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     e - max
+***     f - min
+***     
+***     At depth 2, the evaluation function is called at level e,
+***     so Center should be returned. If your algorithm is returning a
+***     different action, check how you implemented your depth.
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (0.0, 'Center') (0.0, 'Center')
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (-2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (-2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (0.0, 'Center') (8.0, 'Center')
+action_to_take (8.0, 'Center')
+*** FAIL: test_cases\q1\7-1c-check-depth-one-ghost.test
+***     Incorrect move for depth=3
+***         Student move: (8.0, 'Center')
+***         Optimal move: Right
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***      10 c1    0 c2      c3 8
+***         |       |        |
+***       0 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1   10 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***         g1      g2      g3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     e - max
+***     f - min
+***     
+***     At depth 3, the evaluation function is called at level g,
+***     so Right should be returned. If your algorithm is returning a
+***     different action, check how you implemented your depth.
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MAX of (-2147483647, 'Stop') (10.0, 'Center')
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (10.0, 'Center') (0.0, 'Center')
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (10.0, 'Center') (8.0, 'Center')
+action_to_take (10.0, 'Center')
+*** FAIL: test_cases\q1\7-2a-check-depth-two-ghosts.test
+***     Incorrect move for depth=1
+***         Student move: (10.0, 'Center')
+***         Optimal move: Left
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***       0 c1    0 c2      c3 8
+***         |       |        |
+***      10 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1    0 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***       0 g1   10 g2      g3 8
+***         |       |        |
+***       0 h1    0 h2      h3 8
+***         |       |        |
+***       0 i1    0 i2      i3 8
+***         |       |        |
+***         j1      j2      j3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+***     e - min
+***     f - min
+***     g - max
+***     h - min
+***     i - min
+***     
+***     At depth 1, the evaluation function is called at level d,
+***     so Left should be returned. If your algorithm is returning a
+***     different action, check how you implemented your depth.
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MAX of (-2147483647, 'Stop') (10.0, 'Center')
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MIN of (2147483647, 'Stop') (10.0, 'Center')
+MAX of (0.0, 'Center') (10.0, 'Center')
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (-2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (10.0, 'Center') (8.0, 'Center')
+action_to_take (10.0, 'Center')
+*** FAIL: test_cases\q1\7-2b-check-depth-two-ghosts.test
+***     Incorrect move for depth=2
+***         Student move: (10.0, 'Center')
+***         Optimal move: Center
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***       0 c1    0 c2      c3 8
+***         |       |        |
+***      10 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1    0 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***       0 g1   10 g2      g3 8
+***         |       |        |
+***       0 h1    0 h2      h3 8
+***         |       |        |
+***       0 i1    0 i2      i3 8
+***         |       |        |
+***         j1      j2      j3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+***     e - min
+***     f - min
+***     g - max
+***     h - min
+***     i - min
+***     
+***     At depth 2, the evaluation function is called at level g,
+***     so Center should be returned. If your algorithm is returning
+***     a different action, check how you implemented your depth.
+MAX Actions: ['Left', 'Center', 'Right']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (-2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MIN of (2147483647, 'Stop') (0.0, 'Center')
+MAX of (0.0, 'Center') (0.0, 'Center')
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MAX Actions: ['Center']
+MIN Actions: ['Center']
+MIN Actions: ['Center']
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (-2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (-2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MIN of (2147483647, 'Stop') (8.0, 'Center')
+MAX of (0.0, 'Center') (8.0, 'Center')
+action_to_take (8.0, 'Center')
+*** FAIL: test_cases\q1\7-2c-check-depth-two-ghosts.test
+***     Incorrect move for depth=3
+***         Student move: (8.0, 'Center')
+***         Optimal move: Right
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***       0 c1    0 c2      c3 8
+***         |       |        |
+***      10 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1    0 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***       0 g1   10 g2      g3 8
+***         |       |        |
+***       0 h1    0 h2      h3 8
+***         |       |        |
+***       0 i1    0 i2      i3 8
+***         |       |        |
+***         j1      j2      j3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+***     e - min
+***     f - min
+***     g - max
+***     h - min
+***     i - min
+***     
+***     At depth 3, the evaluation function is called at level j,
+***     so Right should be returned. If your algorithm is returning
+***     a different action, check how you implemented your depth.
+*** Running MinimaxAgent on smallClassic 1 time(s).
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East']
+MIN Actions: ['West']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN of (18.0, 'West') (18.0, 'South')
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN of (18.0, 'West') (18.0, 'South')
+MIN of (18.0, 'West') (18.0, 'West')
+MAX of (-2147483647, 'Stop') (18.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (8.0, 'West') (8.0, 'West')
+MAX of (18.0, 'West') (8.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (8.0, 'West') (8.0, 'West')
+MAX of (18.0, 'West') (8.0, 'West')
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MAX of (-2147483647, 'Stop') (18.0, 'West')
+MIN Actions: ['East']
+MIN Actions: ['West']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (8.0, 'West') (8.0, 'West')
+MAX of (-2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (-2.0, 'West')
+MIN of (-2.0, 'West') (-2.0, 'South')
+MIN of (2147483647, 'Stop') (-2.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (-2.0, 'West')
+MIN of (-2.0, 'West') (-2.0, 'South')
+MIN of (-2.0, 'West') (-2.0, 'West')
+MAX of (8.0, 'West') (-2.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (8.0, 'West') (8.0, 'West')
+MAX of (8.0, 'West') (8.0, 'West')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MAX of (18.0, 'West') (8.0, 'West')
+MIN Actions: ['East']
+MIN Actions: ['West']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (8.0, 'West') (8.0, 'West')
+MAX of (-2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (8.0, 'West')
+MIN of (8.0, 'West') (8.0, 'South')
+MIN of (8.0, 'West') (8.0, 'West')
+MAX of (8.0, 'West') (8.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN of (18.0, 'West') (18.0, 'South')
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN of (18.0, 'West') (18.0, 'South')
+MIN of (18.0, 'West') (18.0, 'West')
+MAX of (8.0, 'West') (18.0, 'West')
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MIN of (2147483647, 'Stop') (18.0, 'West')
+MAX of (18.0, 'West') (18.0, 'West')
+action_to_take (18.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (27.0, 'West') (27.0, 'West')
+MAX of (-2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (27.0, 'West') (27.0, 'West')
+MAX of (-2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN of (27.0, 'West') (27.0, 'West')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (27.0, 'West') (27.0, 'West')
+MAX of (-2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'South')
+MIN of (27.0, 'West') (27.0, 'West')
+MAX of (-2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN of (27.0, 'West') (27.0, 'West')
+MIN of (27.0, 'West') (27.0, 'West')
+MAX of (-2147483647, 'Stop') (27.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (-2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (-2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN of (17.0, 'West') (17.0, 'West')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (-2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (-2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (17.0, 'West') (7.0, 'West')
+MIN of (17.0, 'West') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (-2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (7.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (7.0, 'West') (17.0, 'West')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (-2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (7.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (7.0, 'West') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'West')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (-2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (7.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (7.0, 'West') (17.0, 'West')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (-2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (7.0, 'West')
+MIN of (7.0, 'West') (7.0, 'South')
+MIN of (7.0, 'West') (7.0, 'West')
+MAX of (7.0, 'West') (7.0, 'West')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN Actions: ['West', 'South']
+MIN of (2147483647, 'Stop') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'South')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (7.0, 'West') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'West')
+MIN of (17.0, 'West') (17.0, 'West')
+MAX of (27.0, 'West') (17.0, 'West')
+action_to_take (27.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (-2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (36.0, 'East') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (-2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (36.0, 'East') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (-2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (36.0, 'East') (36.0, 'East')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (-2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'South')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (36.0, 'East') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MIN of (36.0, 'East') (36.0, 'East')
+MAX of (-2147483647, 'Stop') (36.0, 'East')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (-2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (-2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (-2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'South')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (-2147483647, 'Stop') (26.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (26.0, 'East') (16.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MIN of (26.0, 'East') (26.0, 'East')
+MAX of (36.0, 'East') (26.0, 'East')
+MIN Actions: ['East', 'South']
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (-2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (-2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN Actions: ['North', 'South']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['West', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (-2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (-2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'South')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (16.0, 'East') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MIN of (16.0, 'East') (16.0, 'East')
+MAX of (36.0, 'East') (16.0, 'East')
+action_to_take (36.0, 'East')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'South')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MAX of (-2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'South')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'South')
+MIN of (45.0, 'East') (45.0, 'East')
+MAX of (-2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'East')
+MAX of (-2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MAX of (-2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MAX of (35.0, 'East') (25.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MAX of (35.0, 'East') (25.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MAX of (35.0, 'East') (35.0, 'East')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (-2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (25.0, 'East') (25.0, 'East')
+MAX of (35.0, 'East') (25.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (25.0, 'East') (25.0, 'East')
+MAX of (35.0, 'East') (25.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (35.0, 'East') (35.0, 'East')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MAX of (-2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MAX of (25.0, 'East') (25.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MAX of (25.0, 'East') (25.0, 'East')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (25.0, 'East') (25.0, 'East')
+MAX of (-2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (25.0, 'East') (25.0, 'East')
+MAX of (25.0, 'East') (25.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'South')
+MIN of (25.0, 'East') (25.0, 'East')
+MAX of (25.0, 'East') (25.0, 'East')
+MIN of (2147483647, 'Stop') (25.0, 'East')
+MIN of (25.0, 'East') (25.0, 'East')
+MAX of (45.0, 'East') (25.0, 'East')
+MIN Actions: ['West', 'East']
+MIN Actions: ['East']
+MAX Actions: ['Stop', 'North', 'South']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MAX of (-2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'South')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MAX of (35.0, 'East') (45.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['East']
+MAX Actions: ['Stop', 'North', 'South']
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (-2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'South')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'South')
+MIN of (45.0, 'East') (45.0, 'East')
+MAX of (35.0, 'East') (45.0, 'East')
+MIN Actions: ['East', 'North']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (35.0, 'East')
+MIN of (35.0, 'East') (35.0, 'South')
+MIN of (35.0, 'East') (35.0, 'East')
+MAX of (45.0, 'East') (35.0, 'East')
+MIN of (2147483647, 'Stop') (45.0, 'East')
+MIN of (45.0, 'East') (45.0, 'East')
+MAX of (45.0, 'East') (45.0, 'East')
+action_to_take (45.0, 'East')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MIN of (54.0, 'East') (54.0, 'South')
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MAX of (-2147483647, 'Stop') (54.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (54.0, 'East') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (54.0, 'East') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MIN of (54.0, 'East') (54.0, 'South')
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MAX of (54.0, 'East') (54.0, 'East')
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MIN of (54.0, 'East') (54.0, 'South')
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MAX of (-2147483647, 'Stop') (54.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (54.0, 'East') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (54.0, 'East') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MIN of (54.0, 'East') (54.0, 'South')
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MAX of (54.0, 'East') (54.0, 'East')
+MIN of (54.0, 'East') (54.0, 'East')
+MIN of (2147483647, 'Stop') (54.0, 'East')
+MAX of (-2147483647, 'Stop') (54.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (-2147483647, 'Stop') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (44.0, 'East') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (44.0, 'East') (34.0, 'East')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (-2147483647, 'Stop') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (44.0, 'East') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (44.0, 'East') (34.0, 'East')
+MIN of (44.0, 'East') (44.0, 'East')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (54.0, 'East') (44.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (-2147483647, 'Stop') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (34.0, 'East') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (34.0, 'East') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (34.0, 'East') (44.0, 'East')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (-2147483647, 'Stop') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (34.0, 'East') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MIN of (34.0, 'East') (34.0, 'South')
+MIN of (2147483647, 'Stop') (34.0, 'East')
+MAX of (34.0, 'East') (34.0, 'East')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'South')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (34.0, 'East') (44.0, 'East')
+MIN of (44.0, 'East') (44.0, 'East')
+MIN of (2147483647, 'Stop') (44.0, 'East')
+MAX of (54.0, 'East') (44.0, 'East')
+action_to_take (54.0, 'East')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MIN of (63.0, 'North') (63.0, 'South')
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MIN of (63.0, 'North') (63.0, 'South')
+MIN of (63.0, 'North') (63.0, 'North')
+MAX of (-2147483647, 'Stop') (63.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (53.0, 'North') (53.0, 'North')
+MAX of (63.0, 'North') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (53.0, 'North') (53.0, 'North')
+MAX of (63.0, 'North') (53.0, 'North')
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (63.0, 'West')
+MIN of (63.0, 'West') (63.0, 'East')
+MIN of (2147483647, 'Stop') (63.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (63.0, 'West')
+MIN of (63.0, 'West') (63.0, 'East')
+MIN of (63.0, 'West') (63.0, 'West')
+MAX of (-2147483647, 'Stop') (63.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (53.0, 'West') (53.0, 'West')
+MAX of (63.0, 'West') (53.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (53.0, 'West') (53.0, 'West')
+MAX of (63.0, 'West') (53.0, 'West')
+MIN of (63.0, 'North') (63.0, 'West')
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MAX of (-2147483647, 'Stop') (63.0, 'North')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (53.0, 'North') (53.0, 'North')
+MAX of (-2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (43.0, 'North') (43.0, 'North')
+MAX of (53.0, 'North') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (43.0, 'North') (43.0, 'North')
+MAX of (53.0, 'North') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (53.0, 'North') (53.0, 'North')
+MAX of (53.0, 'North') (53.0, 'North')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (53.0, 'West') (53.0, 'West')
+MAX of (-2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (43.0, 'West') (43.0, 'West')
+MAX of (53.0, 'West') (43.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (43.0, 'West') (43.0, 'West')
+MAX of (53.0, 'West') (43.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (53.0, 'West') (53.0, 'West')
+MAX of (53.0, 'West') (53.0, 'West')
+MIN of (53.0, 'North') (53.0, 'West')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MAX of (63.0, 'North') (53.0, 'North')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (43.0, 'North') (43.0, 'North')
+MAX of (-2147483647, 'Stop') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (43.0, 'North') (43.0, 'North')
+MAX of (43.0, 'North') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MIN of (43.0, 'North') (43.0, 'South')
+MIN of (43.0, 'North') (43.0, 'North')
+MAX of (43.0, 'North') (43.0, 'North')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (43.0, 'West') (43.0, 'West')
+MAX of (-2147483647, 'Stop') (43.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (43.0, 'West') (43.0, 'West')
+MAX of (43.0, 'West') (43.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (43.0, 'West')
+MIN of (43.0, 'West') (43.0, 'East')
+MIN of (43.0, 'West') (43.0, 'West')
+MAX of (43.0, 'West') (43.0, 'West')
+MIN of (43.0, 'North') (43.0, 'West')
+MIN of (2147483647, 'Stop') (43.0, 'North')
+MAX of (63.0, 'North') (43.0, 'North')
+MIN Actions: ['West']
+MIN Actions: ['East', 'South']
+MAX Actions: ['Stop', 'North', 'South']
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (53.0, 'North') (53.0, 'North')
+MAX of (-2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MIN of (63.0, 'North') (63.0, 'South')
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MIN of (63.0, 'North') (63.0, 'South')
+MIN of (63.0, 'North') (63.0, 'North')
+MAX of (53.0, 'North') (63.0, 'North')
+MIN Actions: ['North', 'South']
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN Actions: ['North', 'South']
+MIN of (2147483647, 'Stop') (53.0, 'North')
+MIN of (53.0, 'North') (53.0, 'South')
+MIN of (53.0, 'North') (53.0, 'North')
+MAX of (63.0, 'North') (53.0, 'North')
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MAX Actions: ['Stop', 'North', 'South']
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (53.0, 'West') (53.0, 'West')
+MAX of (-2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (63.0, 'West')
+MIN of (63.0, 'West') (63.0, 'East')
+MIN of (2147483647, 'Stop') (63.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (63.0, 'West')
+MIN of (63.0, 'West') (63.0, 'East')
+MIN of (63.0, 'West') (63.0, 'West')
+MAX of (53.0, 'West') (63.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN Actions: ['West', 'East']
+MIN of (2147483647, 'Stop') (53.0, 'West')
+MIN of (53.0, 'West') (53.0, 'East')
+MIN of (53.0, 'West') (53.0, 'West')
+MAX of (63.0, 'West') (53.0, 'West')
+MIN of (63.0, 'North') (63.0, 'West')
+MIN of (2147483647, 'Stop') (63.0, 'North')
+MAX of (63.0, 'North') (63.0, 'North')
+action_to_take (63.0, 'North')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MIN of (72.0, 'West') (72.0, 'West')
+MAX of (-2147483647, 'Stop') (72.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (62.0, 'West') (62.0, 'West')
+MAX of (72.0, 'West') (62.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (62.0, 'West') (62.0, 'West')
+MAX of (72.0, 'West') (62.0, 'West')
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (72.0, 'East')
+MIN of (72.0, 'East') (72.0, 'North')
+MIN of (2147483647, 'Stop') (72.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (72.0, 'East')
+MIN of (72.0, 'East') (72.0, 'North')
+MIN of (72.0, 'East') (72.0, 'East')
+MAX of (-2147483647, 'Stop') (72.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (62.0, 'East') (62.0, 'East')
+MAX of (72.0, 'East') (62.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (62.0, 'East') (62.0, 'East')
+MAX of (72.0, 'East') (62.0, 'East')
+MIN of (72.0, 'West') (72.0, 'East')
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MIN Actions: ['West', 'East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MAX of (-2147483647, 'Stop') (72.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX of (72.0, 'West') (62.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX of (72.0, 'West') (62.0, 'West')
+MIN of (2147483647, 'Stop') (72.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (72.0, 'East')
+MIN of (72.0, 'East') (72.0, 'North')
+MIN of (2147483647, 'Stop') (72.0, 'East')
+MAX of (-2147483647, 'Stop') (72.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MAX of (72.0, 'East') (62.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MAX of (72.0, 'East') (62.0, 'East')
+MIN of (72.0, 'West') (72.0, 'East')
+MIN of (72.0, 'West') (72.0, 'West')
+MAX of (-2147483647, 'Stop') (72.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (62.0, 'West') (62.0, 'West')
+MAX of (-2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (52.0, 'West') (52.0, 'West')
+MAX of (62.0, 'West') (52.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (52.0, 'West') (52.0, 'West')
+MAX of (62.0, 'West') (52.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (62.0, 'East') (62.0, 'East')
+MAX of (-2147483647, 'Stop') (62.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (52.0, 'East') (52.0, 'East')
+MAX of (62.0, 'East') (52.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (52.0, 'East') (52.0, 'East')
+MAX of (62.0, 'East') (52.0, 'East')
+MIN of (62.0, 'West') (62.0, 'East')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West', 'East']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX of (-2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MAX of (62.0, 'West') (52.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MAX of (62.0, 'West') (52.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MAX of (-2147483647, 'Stop') (62.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MAX of (62.0, 'East') (52.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MAX of (62.0, 'East') (52.0, 'East')
+MIN of (62.0, 'West') (62.0, 'East')
+MIN of (62.0, 'West') (62.0, 'West')
+MAX of (72.0, 'West') (62.0, 'West')
+MIN Actions: ['North', 'South']
+MIN Actions: ['West', 'East']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (52.0, 'West') (52.0, 'West')
+MAX of (-2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (52.0, 'West') (52.0, 'West')
+MAX of (52.0, 'West') (52.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (52.0, 'West') (52.0, 'West')
+MAX of (52.0, 'West') (52.0, 'West')
+MIN Actions: ['West', 'North']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (62.0, 'West') (62.0, 'West')
+MAX of (52.0, 'West') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (52.0, 'East') (52.0, 'East')
+MAX of (-2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (52.0, 'East') (52.0, 'East')
+MAX of (52.0, 'East') (52.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (52.0, 'East') (52.0, 'East')
+MAX of (52.0, 'East') (52.0, 'East')
+MIN Actions: ['West', 'North']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (62.0, 'East') (62.0, 'East')
+MAX of (52.0, 'East') (62.0, 'East')
+MIN of (62.0, 'West') (62.0, 'East')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN Actions: ['West', 'East']
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MAX of (-2147483647, 'Stop') (52.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MAX of (52.0, 'West') (52.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MIN of (2147483647, 'Stop') (52.0, 'West')
+MAX of (52.0, 'West') (52.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX of (52.0, 'West') (62.0, 'West')
+MIN of (2147483647, 'Stop') (62.0, 'West')
+MAX Actions: ['West', 'Stop', 'East', 'North']
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MAX of (-2147483647, 'Stop') (52.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MAX of (52.0, 'East') (52.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MIN of (52.0, 'East') (52.0, 'North')
+MIN of (2147483647, 'Stop') (52.0, 'East')
+MAX of (52.0, 'East') (52.0, 'East')
+MIN Actions: ['South']
+MIN Actions: ['East', 'North']
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MIN of (62.0, 'East') (62.0, 'North')
+MIN of (2147483647, 'Stop') (62.0, 'East')
+MAX of (52.0, 'East') (62.0, 'East')
+MIN of (62.0, 'West') (62.0, 'East')
+MIN of (62.0, 'West') (62.0, 'West')
+MAX of (72.0, 'West') (62.0, 'West')
+action_to_take (72.0, 'West')
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['South']
+MIN Actions: ['West']
+MAX Actions: ['Stop', 'East', 'North']
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (71.0, 'West') (71.0, 'West')
+MAX of (-2147483647, 'Stop') (71.0, 'West')
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (71.0, 'West') (71.0, 'West')
+MAX of (71.0, 'West') (71.0, 'West')
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (81.0, 'West')
+MIN of (2147483647, 'Stop') (81.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (81.0, 'West')
+MIN of (81.0, 'West') (81.0, 'West')
+MAX of (71.0, 'West') (81.0, 'West')
+MIN of (2147483647, 'Stop') (81.0, 'West')
+MIN of (2147483647, 'Stop') (81.0, 'West')
+MAX of (-2147483647, 'Stop') (81.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (71.0, 'West') (71.0, 'West')
+MAX of (-2147483647, 'Stop') (71.0, 'West')
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (61.0, 'West') (61.0, 'West')
+MAX of (71.0, 'West') (61.0, 'West')
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (61.0, 'West') (61.0, 'West')
+MAX of (71.0, 'West') (61.0, 'West')
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MIN of (2147483647, 'Stop') (71.0, 'West')
+MAX of (81.0, 'West') (71.0, 'West')
+MIN Actions: ['South']
+MIN Actions: ['West']
+MAX Actions: ['West', 'Stop', 'East']
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (61.0, 'West') (61.0, 'West')
+MAX of (-2147483647, 'Stop') (61.0, 'West')
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (61.0, 'West') (61.0, 'West')
+MAX of (61.0, 'West') (61.0, 'West')
+MIN Actions: ['West', 'East']
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN Actions: ['West']
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (61.0, 'West') (61.0, 'West')
+MAX of (61.0, 'West') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MIN of (2147483647, 'Stop') (61.0, 'West')
+MAX of (81.0, 'West') (61.0, 'West')
+action_to_take (81.0, 'West')
+*** FAIL: Terminated with a string exception.
+
+### Question q1: 0/5 ###
+
+
+Finished at 16:24:16
+
+Provisional grades
+==================
+Question q1: 0/5
+------------------
+Total: 0/5
+
+Your grades are NOT yet registered.  To register your grades, make sure
+to follow your instructor's guidelines to receive credit on your project.
+
+
+Process finished with exit code 0

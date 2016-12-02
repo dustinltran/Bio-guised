@@ -20,6 +20,8 @@ private slots:
 
     void on_RegisterButton_clicked();
 
+    void on_RPinky_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

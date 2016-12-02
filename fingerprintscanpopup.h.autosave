@@ -1,0 +1,27 @@
+#ifndef FINGERPRINTSCANPOPUP_H
+#define FINGERPRINTSCANPOPUP_H
+
+#include <QDialog>
+
+namespace Ui {
+class FingerprintScanPopup;
+}
+
+class FingerprintScanPopup : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit FingerprintScanPopup(QWidget *parent = 0);
+    ~FingerprintScanPopup();
+
+private slots:
+    void on_pushButton_2_clicked();
+    
+    void on_Register_clicked();
+    
+private:
+    Ui::FingerprintScanPopup *ui;
+};
+
+#endif // FINGERPRINTSCANPOPUP_H
