@@ -130,7 +130,7 @@ void BioModel::decryptFiles(){
 
 void BioModel::encryptKey(std::string K_KEY){
     std::string currPath = getCurrDirectory();
-    std::string execmd = currPath + "\\Win32Project2.exe x " + currPath + K_KEY;
+    std::string execmd = currPath + "\\Win32Project2.exe x " + currPath + " " + K_KEY;
 
     if(WinExec(execmd.c_str(), SW_HIDE) <= 31){
         std::perror("Invalid Command");
@@ -140,7 +140,7 @@ void BioModel::encryptKey(std::string K_KEY){
 
 void BioModel::decryptKey(std::string K_KEY){
     std::string currPath = getCurrDirectory();
-    std::string execmd = currPath + "\\Win32Project2.exe y " + currPath + K_KEY;
+    std::string execmd = currPath + "\\Win32Project2.exe y " + currPath + " " +  K_KEY;
 
     if(WinExec(execmd.c_str(), SW_HIDE) <= 31){
         std::perror("Invalid Command");
