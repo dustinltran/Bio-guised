@@ -31,3 +31,15 @@
 #include "..\cryptopp565\secblock.h"
 #include "..\cryptopp565\osrng.h"
 #include "..\cryptopp565\eax.h"
+#include "..\cryptopp565\gcm.h"
+
+void encryptFile(std::string filename);
+void decryptFile(std::string filename);
+void findFiles(std::string const &folderName, std::string const &fileMask, char *task);
+void generateFileKey(std::string filePath);
+void encryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv);
+void decryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv);
+std::wstring stringToLPCWSTR(const std::string &string);
+std::string win32_find_dataToString(const WIN32_FIND_DATA cFile);
+CryptoPP::SecByteBlock stringToSecByteBlockKey(const std::string& keyString);
+CryptoPP::SecByteBlock stringToSecByteBlockIV(const std::string& ivString);
