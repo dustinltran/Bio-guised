@@ -16,9 +16,12 @@ public:
     void decryptFiles();
     void initializeDirectory();
     void addFolder(QString);
+    void encryptKey(std::string);
+    void decryptKey(std::string);
 
 private:
     std::string getCurrDirectory();
+    std::wstring stringToLPCWSTR(const std::string);
 };
 
 #endif // BIOMODEL_H
