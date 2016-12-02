@@ -20,6 +20,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_LPinky_clicked()
 {
 
+    fingerprints[0].registerPrint(0);
     fingerprints[0].show();
 }
 
