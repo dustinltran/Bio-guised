@@ -1,4 +1,5 @@
-﻿  Win32Project2.cpp
+﻿  stdafx.cpp
+  Win32Project2.cpp
   Generating code
   Finished generating code
   Win32Project2.vcxproj -> C:\Users\smllt\documents\visual studio 2013\Projects\Win32Project2\Release\Win32Project2.exe
