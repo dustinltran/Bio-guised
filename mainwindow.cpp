@@ -3,12 +3,14 @@
 #include "bioguised.h"
 #include "fingerprintscanpopup.h"
 
+FingerprintScanPopup fingerprints[10] = new FingerprintScanPopup();
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
-{
+    {
     ui->setupUi(this);
-}
+    }
 
 MainWindow::~MainWindow()
 {
@@ -17,8 +19,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_LPinky_clicked()
 {
-    FingerprintScanPopup *fingerprintScanPopup = new FingerprintScanPopup();
-    fingerprintScanPopup->show();
+
+    fingerprints[0].registerPrint(0);
+    fingerprints[0].show();
 }
 
 void MainWindow::on_RegisterButton_clicked()
@@ -26,4 +29,9 @@ void MainWindow::on_RegisterButton_clicked()
     MainWindow::close();
     BioGuised *bioGuised = new BioGuised();
     bioGuised->show();
+}
+
+void MainWindow::on_RPinky_clicked()
+{
+
 }
