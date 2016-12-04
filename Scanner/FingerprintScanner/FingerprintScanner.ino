@@ -40,6 +40,25 @@ void loop()
 {
   uint8_t i = 0;
   int choice = -1;
+  int test;
+//  while(i < 10){
+//    if(finger.loadModel(i + 1) == FINGERPRINT_OK){
+//      slots[i] = 1;
+//      while( ! (test = Serial.read() - '0') != i){
+//        Serial.println(test);
+//      }
+//      while( ! Serial.availableForWrite());
+//      Serial.write(slots[i]);
+//    }
+//    else{
+//      slots[i] = 0;
+//    }
+//    i++;
+//  }
+
+  while( !Serial.read() == 'n');
+  while( ! Serial.availableForWrite());
+  Serial.write(slots, 10);
   while (choice == -1){
     choice = Serial.read();
   }
@@ -50,17 +69,7 @@ void loop()
             break;
    default: break;
   }
-  while(i < 10){
-      if(finger.loadModel(i + 1) == FINGERPRINT_OK){
-        slots[i] = 1;
-        while( ! Serial.availableForWrite());
-        Serial.write(slots[i]);
-      }
-      else{
-        slots[i] = 0;
-      }
-      i++;
-    }
+
 }
 
 void registerFingerprints(){
