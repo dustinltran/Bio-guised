@@ -26,3 +26,6 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     fingerprintscanpopup.ui \
     bioguised.ui
+
+DISTFILES += \
+    Registered

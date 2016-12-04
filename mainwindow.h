@@ -23,6 +23,7 @@ private slots:
     void on_RegisterButton_clicked();
 
     void on_RPinky_clicked();
+    void closeEvent(QCloseEvent *bar);
 
 private:
     Ui::MainWindow *ui;
