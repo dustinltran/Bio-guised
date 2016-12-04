@@ -4,25 +4,28 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Bio-guised
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
         mainwindow.cpp \
     fingerprintscanpopup.cpp \
     bioguised.cpp \
-    biomodel.cpp
+    biomodel.cpp \
 
 HEADERS  += mainwindow.h \
     fingerprintscanpopup.h \
     bioguised.h \
-    biomodel.h
+    biomodel.h \
+
 
 FORMS    += mainwindow.ui \
     fingerprintscanpopup.ui \
     bioguised.ui
+
+DISTFILES += \
+    Registered

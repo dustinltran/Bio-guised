@@ -12,8 +12,17 @@ class FingerprintScanPopup : public QDialog
     Q_OBJECT
 
 public:
+    bool registerPrint(int);
+    void delay(int);
     explicit FingerprintScanPopup(QWidget *parent = 0);
     ~FingerprintScanPopup();
+
+private slots:
+
+
+    void on_Register_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::FingerprintScanPopup *ui;

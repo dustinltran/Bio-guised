@@ -103,7 +103,7 @@
      <item>
       <widget class="QPushButton" name="addApplication">
        <property name="text">
-        <string>Add App</string>
+        <string>Add Folder</string>
        </property>
       </widget>
      </item>

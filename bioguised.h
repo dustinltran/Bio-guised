@@ -18,6 +18,10 @@ public:
 private slots:
     void on_addFile_clicked();
 
+    void on_deleteFile_clicked();
+
+    void on_addApplication_clicked();
+
 private:
     Ui::BioGuised *ui;
 };
