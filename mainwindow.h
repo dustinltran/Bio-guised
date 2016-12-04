@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#define FINGERS 10
+
 namespace Ui {
 class MainWindow;
 }
