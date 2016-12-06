@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
     std::thread watchdog(watchdog);
     BioModel* bioModel = new BioModel(); //Need for use of functions from biomodel
-    ;
+    bioModel->initializeDirectory();
 
 
     return a.exec();
