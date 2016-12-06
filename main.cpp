@@ -9,7 +9,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     BioModel* bioModel = new BioModel(); //Need for use of functions from biomodel
-
-    bioModel->generateKey();
+    bioModel->initializeDirectory();
     return a.exec();
 }

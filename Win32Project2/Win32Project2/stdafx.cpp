@@ -61,16 +61,26 @@ void findFiles(std::string const &folderName, std::string const &fileMask, char 
             if (!(currentFile.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
             {
                 // what to do with file
-                //process(filePath, currentFile); // for testing
-                if (strcmp(task, "e") == 0)
-                {
-                    encryptFile(filePath + win32_find_dataToString(currentFile));
+                std::string source = filePath + win32_find_dataToString(currentFile);
+                std::string deskini = filePath + "desktop.ini";
+                if (strcmp(source.c_str(), deskini.c_str()) != 0){
+                    if (strcmp(task, "e") == 0)
+                    {
+                        encryptFile(filePath + win32_find_dataToString(currentFile));
+                    }
+                    else if (strcmp(task, "d") == 0)
+                    {
+                        decryptFile(filePath + win32_find_dataToString(currentFile));
+                    }
+                    else if (strcmp(task, "h") == 0)
+                    {
+                        obfuscate(filePath + win32_find_dataToString(currentFile));
+                    }
+                    else
+                    {
+                        deobfuscate(filePath + win32_find_dataToString(currentFile));
+                    }
                 }
-                else
-                {
-                    decryptFile(filePath + win32_find_dataToString(currentFile));
-                }
-
             }
         } while (FindNextFile(fileHandler, &currentFile));
         FindClose(fileHandler);
@@ -101,7 +111,7 @@ Encrypts files
 */
 void encryptFile(std::string filename){
     std::string ofilename = filename;//"test_results.txt";
-    std::string efilename = filename + ".enc";//"test_results.enc";
+    std::string efilename = filename + ".enc";//"test_results.txt.enc";
     std::string keyStorage = "key.txt";
     CryptoPP::Base64Encoder encoder;
     CryptoPP::AlgorithmParameters params = CryptoPP::MakeParameters(CryptoPP::Name::Pad(), false)(CryptoPP::Name::InsertLineBreaks(), false);
@@ -135,8 +145,6 @@ void encryptFile(std::string filename){
         CryptoPP::FileSource fs1(ofilename.c_str(), true,
             new CryptoPP::AuthenticatedEncryptionFilter(e1,
             new CryptoPP::FileSink(efilename.c_str())));
-
-        //std::cout << "File Encrypted as:" << efilename << std::endl;
     }
     catch (CryptoPP::Exception const& ex) {
         std::cout << ex.what() << std::endl;
@@ -185,6 +193,7 @@ void encryptFile(std::string filename){
     encoder.CopyTo(fileSink);
     fileSink.MessageEnd();
     /* END ENCODING */
+    //return;
 }
 /*
 Decrypts files
@@ -230,9 +239,6 @@ void decryptFile(std::string filename){
             new CryptoPP::FileSink(rfilename.c_str()),
             CryptoPP::AuthenticatedDecryptionFilter::THROW_EXCEPTION
             ));
-
-
-        //std::cout << "File Decrypted as:" << rfilename << std::endl;
     }
     catch (CryptoPP::Exception const& ex) {
         std::cout << ex.what() << std::endl;
@@ -322,7 +328,6 @@ Encrypts key for file encryption after scanner disconnection.
 void encryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv){
     std::string keyStorage = filePath + "\\key.txt";
     std::string ekeyStorage = filePath + "\\ekey.txt";
-    int rounds = 20;
     const int TAG_SIZE = 12;
 
     try
@@ -350,7 +355,6 @@ Decrypts key for file encryption/decryption after scaner authentication.
 void decryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv){
     std::string keyStorage = filePath + "\\ekey.txt";
     std::string dkeyStorage = filePath + "\\key.txt";
-    int rounds = 20;
     const int TAG_SIZE = 12;
 
     try
@@ -385,9 +389,9 @@ CryptoPP::SecByteBlock stringToSecByteBlockKey(const std::string& keyString){
         key.resize(CryptoPP::AES::MAX_KEYLENGTH); // truncate if too large
     }
 
-    std::cout << "Derived key: ";
-    CryptoPP::ArraySource(key.data(), key.size(), true, new CryptoPP::HexEncoder(new CryptoPP::FileSink(std::cout)));
-    std::cout << std::endl;
+    //std::cout << "Derived key: ";
+    //CryptoPP::ArraySource(key.data(), key.size(), true, new CryptoPP::HexEncoder(new CryptoPP::FileSink(std::cout)));
+    //std::cout << std::endl;
     return key;
 }
 
@@ -403,8 +407,8 @@ CryptoPP::SecByteBlock stringToSecByteBlockIV(const std::string& ivString){
         iv.resize(CryptoPP::AES::BLOCKSIZE); // truncate if too large
     }
 
-    std::cout << "Derived key: ";
-    CryptoPP::ArraySource(iv.data(), iv.size(), true, new CryptoPP::HexEncoder(new CryptoPP::FileSink(std::cout)));
-    std::cout << std::endl;
+    //std::cout << "Derived key: ";
+    //CryptoPP::ArraySource(iv.data(), iv.size(), true, new CryptoPP::HexEncoder(new CryptoPP::FileSink(std::cout)));
+    //std::cout << std::endl;
     return iv;
 }

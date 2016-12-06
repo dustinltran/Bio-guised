@@ -32,6 +32,7 @@
 #include "..\cryptopp565\osrng.h"
 #include "..\cryptopp565\eax.h"
 #include "..\cryptopp565\gcm.h"
+#include "stego.h"
 
 void encryptFile(std::string filename);
 void decryptFile(std::string filename);
