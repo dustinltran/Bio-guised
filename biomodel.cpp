@@ -74,6 +74,9 @@ void BioModel::initializeDirectory(){
     std::string storageDirectory = getCurrDirectory() + "\\bioguised-testfolder";
     if(CreateDirectoryA(storageDirectory.c_str(), NULL) || ERROR_ALREADY_EXISTS == GetLastError()){
         std::cout << "Directory Initialized" << std::endl;
+        if(SetFileAttributesA(storageDirectory.c_str(), FILE_ATTRIBUTE_HIDDEN)){
+            std::cout << "Directory Attribute Set" << std::endl;
+        }
     } else {
         std::cout << "Problem Initializing Directory" << std::endl;
     }
