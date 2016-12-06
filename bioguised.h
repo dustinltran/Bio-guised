@@ -21,6 +21,7 @@ private slots:
     void on_deleteFile_clicked();
 
     void on_addApplication_clicked();
+    void closeEvent(QCloseEvent*);
 
 private:
     Ui::BioGuised *ui;
