@@ -1,8 +1,9 @@
 # Bio-guised
+* Repo URL: https://github.com/dustinltran/Bio-guised
 * IMPORTANT: This is for Windows platform only!
 * DISCLAIMER: for testing purposes, Bio-guised will launch registration screen but will not function after without the required hardware (fingerprint scanner)
 
-DESCRIPTION: Application to create a multilevel security on a windows platform.
+DESCRIPTION: Application add multilevel security on a windows platform.
 
 AUTHORS: Sam Rucker, Dustin Tran, Daniel Trebe
 
