@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="Back">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -51,5 +51,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Register</sender>
+   <signal>clicked()</signal>
+   <receiver>Register</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>275</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -2,6 +2,7 @@
 #include "ui_fingerprintscanpopup.h"
 
 #include <QtSerialPort/QtSerialPort>
+#include <QTime>
 
 FingerprintScanPopup::FingerprintScanPopup(QWidget *parent) :
     QDialog(parent),
@@ -18,11 +19,10 @@ FingerprintScanPopup::~FingerprintScanPopup()
 }
 
 
-
-
-
-FingerprintScanPopup::registerPrint(int print){
+bool FingerprintScanPopup::registerPrint(int print){
     char fingerPrint[4];
+    int retry = 0;
+    bool read = false;
     QSerialPortInfo info("COM6");
     // Check info of the port
     qDebug() << "Name        : " << info.portName();
@@ -39,27 +39,47 @@ FingerprintScanPopup::registerPrint(int print){
     serial.setStopBits(QSerialPort::OneStop);
     serial.setFlowControl(QSerialPort::NoFlowControl);
 
-    if (serial.isWritable())
+    if (serial.isOpen() && serial.isWritable())
     {
         qDebug() << "Is open : " << serial.isOpen() << endl;
         qDebug() << "Is writable : " << serial.isWritable() << endl;
 
-        fingerPrint = itoa(print, fingerPrint, 10);
-        fingerPrint = strncat(fingerPrint, "\n", 1);
+        QByteArray action("r");
+        serial.write(action);
+        delay(500);
+        itoa(print, fingerPrint, 10);
+        strncat(fingerPrint, "\n", 1);
         QByteArray finger(fingerPrint);
-        serial.write(finger);
+
+        //Prevent race condition
+        while(retry < 3 && (serial.isOpen() && serial.isWritable())){
+            serial.write(finger);
+            delay(500);
+            retry++;
+        }
+        if(retry >= 3){
+
+            //Send Alert
+        }
+        retry = 0;
         if (serial.bytesToWrite() > 0)
         {
             serial.flush();
             if(serial.waitForBytesWritten(1000))
             {
                 qDebug() << "data has been send" << endl;
+                while(serial.waitForReadyRead(-1)){
+                    if(serial.readAll().data()[1] == 'n')
+                        qDebug() << "read ME";
+                         bool read = true;
+                }
             }
 
         }
         if(serial.flush())
             {
                 qDebug() << "ok" << endl;
+
             }
             qDebug() <<"value sent!!! "<< endl;
             serial.close();
@@ -69,5 +89,17 @@ FingerprintScanPopup::registerPrint(int print){
     {
 
         qDebug() << "An error occured" << endl;
+    }
+    retry = 0;
+    this->close();
+    return read;
+}
+
+void FingerprintScanPopup::delay( int millisecondsToWait )
+{
+    QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
+    while( QTime::currentTime() < dieTime )
+    {
+        QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );
     }
 }

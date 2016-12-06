@@ -18,7 +18,7 @@ void BioModel::addFile(QString source)
 
     _splitpath_s(source.toStdString().c_str(), drive, dir, fname, ext);
 
-    std::string outputDirectory = getCurrDirectory() + "\\bioguised-testfolder";
+    std::string outputDirectory = getCurrDirectory() + "\\bioguised";
 
     if(CreateDirectoryA(outputDirectory.c_str(), NULL) ||
             ERROR_ALREADY_EXISTS == GetLastError()){

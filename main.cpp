@@ -1,7 +1,11 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QtSerialPort/QtSerialPort>
 #include "Windows.h"
 #include "biomodel.h"
+#include "bioguised.h"
+
+//BioGuised *bioGuised = new BioGuised();
 
 int main(int argc, char *argv[])
 {
@@ -10,7 +14,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     BioModel* bioModel = new BioModel(); //Need for use of functions from biomodel
-
-    bioModel->generateKey();
+    ;
     return a.exec();
-}
+ }

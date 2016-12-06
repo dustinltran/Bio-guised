@@ -2,7 +2,10 @@
 #include "ui_bioguised.h"
 #include "biomodel.h"
 #include <iostream>
+#include <QtSerialPort/QtSerialPort>
 #include <QFileDialog>
+#include <QCloseEvent>
+#include <QMessageBox>
 
 BioGuised::BioGuised(QWidget *parent) :
     QMainWindow(parent),
@@ -40,4 +43,19 @@ void BioGuised::on_addApplication_clicked()
     bioModel->addFolder(folderToMove);
 //    std::cout << folderToMove.toUtf8().toStdString() << std::endl;
     // C:/Users/smllt/Documents/Â
+}
+
+void BioGuised::closeEvent (QCloseEvent *event)
+{
+    BioModel *bioModel = new BioModel();
+//    QMessageBox::StandardButton resBtn = QMessageBox::question( this, "Close App",
+//                                                                tr("Are you sure?\n"),
+//                                                                QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+//                                                                QMessageBox::Yes);
+//    if (resBtn != QMessageBox::Yes) {
+//        event->ignore();
+//    } else {
+//        event->accept();
+//    }
+    bioModel->encryptFiles();
 }

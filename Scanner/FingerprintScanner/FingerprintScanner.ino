@@ -40,6 +40,7 @@ void loop()
 {
   uint8_t i = 0;
   int choice = -1;
+  int registered;
   int test;
 //  while(i < 10){
 //    if(finger.loadModel(i + 1) == FINGERPRINT_OK){
@@ -63,7 +64,10 @@ void loop()
     choice = Serial.read();
   }
   switch(choice){
-    case 'r': registerFingerprints();
+    case 'r': registered = registerFingerprints();
+              if(registered == 255)
+                while(! Serial.availableForWrite())
+                 Serial.write("d");
             break;
     case 'v': verifyFingerprints();
             break;
@@ -73,12 +77,15 @@ void loop()
 }
 
 void registerFingerprints(){
+  uint8_t success = 0;
   Serial.println("Ready to enroll a fingerprint! Please Type in the ID # you want to save this finger as...");
   id = readnumber();
   Serial.print("Enrolling ID #");
   Serial.println(id);
   
-  while (!  getFingerprintEnroll() );
+  while (!  (success = getFingerprintEnroll()) );
+  return success;
+  
 }
 
 uint8_t getFingerprintEnroll() {
@@ -219,6 +226,7 @@ uint8_t getFingerprintEnroll() {
     return p;
   }   
 
+  return 255;
   
 }
 /********************************************************
@@ -297,6 +305,7 @@ uint8_t getFingerprintID() {
   // found a match!
   Serial.print("Found ID #"); Serial.print(finger.fingerID); 
   Serial.print(" with confidence of "); Serial.println(finger.confidence); 
+
 }
 
 // returns -1 if failed, otherwise returns ID #

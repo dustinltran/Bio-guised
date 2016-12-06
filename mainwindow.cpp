@@ -110,14 +110,129 @@ void MainWindow::on_LPinky_clicked()
     fingerprints[0].show();
     if (read == true){
         positions[0] = true;
-//        if()
-//        QPixmap pixmap(".\fingerprint.jpg");
-//        QIcon ButtonIcon(pixmap);
-//        ;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
     }
+}
+
+void MainWindow::on_LRing_clicked()
+{
+    bool read;
+    read = fingerprints[1].registerPrint(0);
+    fingerprints[1].show();
+    if (read == true){
+        positions[1] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+    }
+}
+
+void MainWindow::on_LMiddle_clicked()
+{
+    bool read;
+    read = fingerprints[2].registerPrint(0);
+    fingerprints[2].show();
+    if (read == true){
+        positions[2] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+}
+
+void MainWindow::on_LIndex_clicked()
+{
+    bool read;
+    read = fingerprints[3].registerPrint(0);
+    fingerprints[3].show();
+    if (read == true){
+        positions[3] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+}
+
+void MainWindow::on_LThumb_clicked()
+{
+    bool read;
+    read = fingerprints[5].registerPrint(0);
+    fingerprints[5].show();
+    if (read == true){
+        positions[5] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+
+}
+
+void MainWindow::on_RThumb_clicked()
+{
+    bool read;
+    read = fingerprints[6].registerPrint(0);
+    fingerprints[6].show();
+    if (read == true){
+        positions[6] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+
+}
+
+void MainWindow::on_RIndex_clicked()
+{
+    bool read;
+    read = fingerprints[6].registerPrint(0);
+    fingerprints[6].show();
+    if (read == true){
+        positions[6] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+}
+
+void MainWindow::on_RMiddle_clicked()
+{
+    bool read;
+    read = fingerprints[7].registerPrint(0);
+    fingerprints[7].show();
+    if (read == true){
+        positions[7] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+
+}
+
+void MainWindow::on_RRing_clicked()
+{
+    bool read;
+    read = fingerprints[8].registerPrint(0);
+    fingerprints[8].show();
+    if (read == true){
+        positions[8] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
+
 }
 
 void MainWindow::on_RPinky_clicked()
 {
-
+    bool read;
+    read = fingerprints[9].registerPrint(0);
+    fingerprints[9].show();
+    if (read == true){
+        positions[9] = true;
+        QPixmap pixmap(".\fingerprint.jpg");
+        QIcon ButtonIcon(pixmap);
+        ;
+    }
 }
+
