@@ -22,6 +22,12 @@ private slots:
 
     void on_addApplication_clicked();
 
+    void on_createNewFileFolder_clicked();
+
+    void on_unhideFile_clicked();
+
+    void on_unhideApplication_clicked();
+
 private:
     Ui::BioGuised *ui;
 };

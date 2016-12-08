@@ -4,8 +4,11 @@
 
 #include "stdafx.h"
 
-// TODO: reference any additional headers you need in STDAFX.H
-// and not in this file
+/****************************************************************************************
+TASK:   Convert std::string to wstring
+PRE :   string - std::string to be converted
+POST:   returns converted std::wstring
+****************************************************************************************/
 std::wstring stringToLPCWSTR(const std::string &string)
 {
     int len;
@@ -15,11 +18,15 @@ std::wstring stringToLPCWSTR(const std::string &string)
     MultiByteToWideChar(CP_ACP, 0, string.c_str(), stringLength, buf, len);
     std::wstring result(buf);
     delete[] buf;
+
     return result;
 }
-/*
-Converts a WIN32_FIND_DATA to a string
-*/
+
+/****************************************************************************************
+TASK:   convert WIN32_FIND_DATA to std::string
+PRE :   cFile - data to be converted
+POST:   returns converted std::string
+****************************************************************************************/
 std::string win32_find_dataToString(const WIN32_FIND_DATA cFile){
     char fNam[260];
     char dChar = ' ';
@@ -29,9 +36,16 @@ std::string win32_find_dataToString(const WIN32_FIND_DATA cFile){
     return sFileName;
 }
 
-/*
-Finds files in directory and its subdirectories
-*/
+/****************************************************************************************
+TASK:   Traverses filesystem
+PRE :   folderName - the folder where to start traversal
+        fileMask - mask for a file
+        task - identifier for the task to run on files
+POST:   Files in folder and sub-folders traveresed and task performed on each file
+CITATION: The following function was adapted from:
+http://stackoverflow.com/questions/12568835/find-all-files-in-all-directories-in-c
+By Jerry Coffin
+****************************************************************************************/
 void findFiles(std::string const &folderName, std::string const &fileMask, char *task){
     HANDLE fileHandler;
     WIN32_FIND_DATA currentFile;
@@ -105,10 +119,14 @@ void findFiles(std::string const &folderName, std::string const &fileMask, char 
     } while (!directory.empty());
 }
 
-
-/*
-Encrypts files
-*/
+/****************************************************************************************
+TASK:   Encrypt a file
+PRE :   filename - absolute filepath for file to be encrypted
+POST:   target file is encrypted
+CITATION: Encoding/Decoding part was adapted from:
+http://stackoverflow.com/questions/28816212/pumpmessages-in-crypto-reading-a-key-file
+By jww
+****************************************************************************************/
 void encryptFile(std::string filename){
     std::string ofilename = filename;//"test_results.txt";
     std::string efilename = filename + ".enc";//"test_results.txt.enc";
@@ -130,55 +148,33 @@ void encryptFile(std::string filename){
     bQueue.GetWord16(size, CryptoPP::BIG_ENDIAN_ORDER);
     key.resize(size);
     bQueue.Get(key, key.size());
+
     // Reading iv
     bQueue.GetWord16(size, CryptoPP::BIG_ENDIAN_ORDER);
     iv.resize(size);
     bQueue.Get(iv, iv.size());
-
     /* END DECODING */
 
     /* START ENCRYPTION */
     try {
-        CryptoPP::EAX< CryptoPP::AES >::Encryption e1;
-        e1.SetKeyWithIV(key, key.size(), iv, iv.size());
+        CryptoPP::EAX< CryptoPP::AES >::Encryption encrypt;
+        encrypt.SetKeyWithIV(key, key.size(), iv, iv.size());
 
         CryptoPP::FileSource fs1(ofilename.c_str(), true,
-            new CryptoPP::AuthenticatedEncryptionFilter(e1,
+            new CryptoPP::AuthenticatedEncryptionFilter(encrypt,
             new CryptoPP::FileSink(efilename.c_str())));
     }
     catch (CryptoPP::Exception const& ex) {
         std::cout << ex.what() << std::endl;
     }
     /* END ENCRYPTION */
+
     if (_unlink(ofilename.c_str()) == -1)
     {
         std::perror("Could not delete original file unlink");
     }
-    else
-    {
-        /*if (std::remove(ofilename.c_str()) != 0)
-        {
-        std::perror("Could not delete original file remove");
-        }
-        else
-        {
-        std::wstring tempString = stringToLPCWSTR(ofilename);
-        LPCWSTR lofilename = tempString.c_str();
-        if (DeleteFile(lofilename) == 0)
-        {
-        printf("getting last error");
-        GetLastError();
-        }
-        else
-        {
-        std::printf("Original file deleted");
-        }
-        std::printf("Original file deleted");
-        }*/
-        //std::cout << "Original file deleted" << std::endl;
-    }
-    /* START ENCODING */
 
+    /* START ENCODING */
     // Writing the key
     encoder.PutWord16(static_cast<CryptoPP::word16>(key.size()), CryptoPP::BIG_ENDIAN_ORDER);
     encoder.Put(key.data(), key.size());
@@ -193,11 +189,16 @@ void encryptFile(std::string filename){
     encoder.CopyTo(fileSink);
     fileSink.MessageEnd();
     /* END ENCODING */
-    //return;
 }
-/*
-Decrypts files
-*/
+
+/****************************************************************************************
+TASK:   Decrypt a file
+PRE :   Absolute file path for file to be decrypted
+POST:   file is decrypted
+CITATION: Encoding/Decoding part was adapted from:
+http://stackoverflow.com/questions/28816212/pumpmessages-in-crypto-reading-a-key-file
+By jww
+****************************************************************************************/
 void decryptFile(std::string filename){
     std::string efilename = filename;//"test_results.txt.enc";
     std::string rfilename = filename.substr(0, filename.find(".enc"));//"test_results_recovered.txt";
@@ -214,7 +215,7 @@ void decryptFile(std::string filename){
     fileSource.PumpAll();
 
     // Reading key & iv
-    CryptoPP::SecByteBlock key, iv, key2, iv2;
+    CryptoPP::SecByteBlock key, iv;
     CryptoPP::word16 size = 0;
 
     // Reading key
@@ -231,11 +232,11 @@ void decryptFile(std::string filename){
 
     /* START DECRYPTION */
     try {
-        CryptoPP::EAX< CryptoPP::AES >::Decryption d2;
-        d2.SetKeyWithIV(key, key.size(), iv, iv.size());
+        CryptoPP::EAX< CryptoPP::AES >::Decryption decrypt;
+        decrypt.SetKeyWithIV(key, key.size(), iv, iv.size());
 
         CryptoPP::FileSource fs2(efilename.c_str(), true,
-            new CryptoPP::AuthenticatedDecryptionFilter(d2,
+            new CryptoPP::AuthenticatedDecryptionFilter(decrypt,
             new CryptoPP::FileSink(rfilename.c_str()),
             CryptoPP::AuthenticatedDecryptionFilter::THROW_EXCEPTION
             ));
@@ -248,29 +249,6 @@ void decryptFile(std::string filename){
     if (_unlink(efilename.c_str()) == -1)
     {
         std::perror("Could not delete original file unlink");
-    }
-    else
-    {
-        /*if (std::remove(ofilename.c_str()) != 0)
-        {
-        std::perror("Could not delete original file remove");
-        }
-        else
-        {
-        std::wstring tempString = stringToLPCWSTR(ofilename);
-        LPCWSTR lofilename = tempString.c_str();
-        if (DeleteFile(lofilename) == 0)
-        {
-        printf("getting last error");
-        GetLastError();
-        }
-        else
-        {
-        std::printf("Original file deleted");
-        }
-        std::printf("Original file deleted");
-        }*/
-        //std::cout << "Original file deleted" << std::endl;
     }
 
     /* START ENCODING */
@@ -290,9 +268,15 @@ void decryptFile(std::string filename){
     fileSink.MessageEnd();
     /* END ENCODING */
 }
-/*
-Generates key for encyption and stores it.
-*/
+
+/****************************************************************************************
+TASK:   Generate key for encryption / decryption
+PRE :   filePath - the file path to store the key
+POST:   Key is generated and stored in target location
+CITATION: Encoding part was adapted from:
+http://stackoverflow.com/questions/28816212/pumpmessages-in-crypto-reading-a-key-file
+By jww
+****************************************************************************************/
 void generateFileKey(std::string filePath){
     std::string keyStorage = filePath + "\\key.txt";
 
@@ -322,9 +306,14 @@ void generateFileKey(std::string filePath){
     encoder.CopyTo(fileSink);
     fileSink.MessageEnd();
 }
-/*
-Encrypts key for file encryption after scanner disconnection.
-*/
+
+/****************************************************************************************
+TASK:   Encrypt key
+PRE :   filePath - location of the key
+        key - key from fingerprint scanner input
+        iv - iv from fingerprint scanner input
+POST:   key for file encryption/decryption is encrypted
+****************************************************************************************/
 void encryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv){
     std::string keyStorage = filePath + "\\key.txt";
     std::string ekeyStorage = filePath + "\\ekey.txt";
@@ -332,11 +321,11 @@ void encryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecB
 
     try
     {
-        CryptoPP::GCM<CryptoPP::AES>::Encryption e;
-        e.SetKeyWithIV(key, key.size(), iv, iv.size());
+        CryptoPP::GCM<CryptoPP::AES>::Encryption encrypt;
+        encrypt.SetKeyWithIV(key, key.size(), iv, iv.size());
 
         CryptoPP::FileSource fileSource(keyStorage.c_str(), true,
-            new CryptoPP::AuthenticatedEncryptionFilter(e,
+            new CryptoPP::AuthenticatedEncryptionFilter(encrypt,
             new CryptoPP::FileSink(ekeyStorage.c_str()), false, TAG_SIZE));
     }
     catch (CryptoPP::Exception& e)
@@ -349,9 +338,14 @@ void encryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecB
         std::perror("Could not delete original file unlink");
     }
 }
-/*
-Decrypts key for file encryption/decryption after scaner authentication.
-*/
+
+/****************************************************************************************
+TASK:   Decrypt key
+PRE :   filePath - location of encrypted key
+        key - key from fingerprint scanner input
+        iv - iv from fingerprint scanner input
+POST:   key for file encryption/decryption is decrypted
+****************************************************************************************/
 void decryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecByteBlock iv){
     std::string keyStorage = filePath + "\\ekey.txt";
     std::string dkeyStorage = filePath + "\\key.txt";
@@ -359,11 +353,11 @@ void decryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecB
 
     try
     {
-        CryptoPP::GCM<CryptoPP::AES>::Decryption d;
-        d.SetKeyWithIV(key, key.size(), iv, iv.size());
+        CryptoPP::GCM<CryptoPP::AES>::Decryption decrypt;
+        decrypt.SetKeyWithIV(key, key.size(), iv, iv.size());
 
         CryptoPP::FileSource fileSource(keyStorage.c_str(), true,
-            new CryptoPP::AuthenticatedDecryptionFilter(d,
+            new CryptoPP::AuthenticatedDecryptionFilter(decrypt,
             new CryptoPP::FileSink(dkeyStorage.c_str()), false, TAG_SIZE));
     }
     catch (CryptoPP::Exception& e)
@@ -377,6 +371,11 @@ void decryptKey(std::string filePath, CryptoPP::SecByteBlock key, CryptoPP::SecB
     }
 }
 
+/****************************************************************************************
+TASK:   Form key from fingerprint scanner input
+PRE :   keyString - data from scanner
+POST:   returns key of appropriate size
+****************************************************************************************/
 CryptoPP::SecByteBlock stringToSecByteBlockKey(const std::string& keyString){
     CryptoPP::SecByteBlock key((const byte*)keyString.data(), keyString.size());
 
@@ -395,6 +394,11 @@ CryptoPP::SecByteBlock stringToSecByteBlockKey(const std::string& keyString){
     return key;
 }
 
+/****************************************************************************************
+TASK:   Form iv from fingerprint scanner input
+PRE :   ivString - data from scanner
+POST:   returns iv of appropriate size
+****************************************************************************************/
 CryptoPP::SecByteBlock stringToSecByteBlockIV(const std::string& ivString){
     CryptoPP::SecByteBlock iv((const byte*)ivString.data(), ivString.size());
 
