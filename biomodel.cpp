@@ -52,9 +52,12 @@ void BioModel::createNewFileFolder(QString newFolderName){
         std::cout << "Directory Initialized" << std::endl;
         if(SetFileAttributesA(destination.c_str(), FILE_ATTRIBUTE_HIDDEN)){
             std::cout << "Directory Attribute Set" << std::endl;
+        } else {
+            std::cout << "Problem Assigning Attribute to Directory"
+                      << GetLastError() << std::endl;
         }
     } else {
-        std::cout << "Problem Initializing Directory" << std::endl;
+        std::cout << "Problem Initializing Directory" << GetLastError() << std::endl;
     }
 }
 

@@ -26,8 +26,10 @@ void BioGuised::on_addFile_clicked()
     const QString DIR = "C:\\";
     QString sourceFile = QFileDialog::getOpenFileName(this,NULL,DIR);
 
-    BioModel* bioModel = new BioModel();
-    bioModel->addFile(sourceFile);
+    if(!sourceFile.isEmpty()){
+        BioModel* bioModel = new BioModel();
+        bioModel->addFile(sourceFile);
+    }
 }
 
 /****************************************************************************************
@@ -39,10 +41,12 @@ void BioGuised::on_deleteFile_clicked()
 {
     BioModel* bioModel = new BioModel();
     std::string path = bioModel->getCurrDirectory();
-    const QString DIR= QString::fromStdString(path) + "\\bioguised-testfolder";
+    const QString DIR = QString::fromStdString(path) + "\\bioguised-testfolder";
 
     QString fileToDelete = QFileDialog::getOpenFileName(this,NULL, DIR);
-    bioModel->deleteFile(fileToDelete);
+    if (!fileToDelete.isEmpty()){
+        bioModel->deleteFile(fileToDelete);
+    }
 }
 
 /****************************************************************************************
@@ -55,8 +59,10 @@ void BioGuised::on_addApplication_clicked()
     const QString DIR = "C:\\";
     QString folderToMove = QFileDialog::getExistingDirectory(this,NULL,DIR);
 
-    BioModel* bioModel = new BioModel();
-    bioModel->addFolder(folderToMove);
+    if(!folderToMove.isEmpty()){
+        BioModel* bioModel = new BioModel();
+        bioModel->addFolder(folderToMove);
+    }
 }
 
 /****************************************************************************************
@@ -71,9 +77,11 @@ void BioGuised::on_createNewFileFolder_clicked()
 
     QString newFolderName = QInputDialog::getText(this, tr("Name New Folder"),
                                                   tr("Name"), QLineEdit::Normal);
-    const QString DIR = QString::fromStdString(path) +
-            "\\bioguised-testfolder" + "\\" + newFolderName;
-    bioModel->createNewFileFolder(DIR);
+    if (!newFolderName.isEmpty()){
+       const QString DIR = QString::fromStdString(path) +
+                "\\bioguised-testfolder" + "\\" + newFolderName;
+        bioModel->createNewFileFolder(DIR);
+    }
 }
 
 /****************************************************************************************
