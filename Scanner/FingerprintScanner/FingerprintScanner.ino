@@ -1,4 +1,8 @@
-
+/**************************
+ * This version is to be used with the Adafruit fingerprint scanner
+ * Load the library into the Arduino library
+ * The register and verfication portion is created using examples
+ */
 #include <Adafruit_Fingerprint.h>
 #include <SoftwareSerial.h>
 

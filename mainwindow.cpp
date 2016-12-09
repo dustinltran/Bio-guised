@@ -111,8 +111,7 @@ void MainWindow::on_LPinky_clicked()
     if (read == true){
         positions[0] = true;
         QPixmap pixmap(".\fingerprint.jpg");
-        QIcon ButtonIcon(pixmap);
-        ;
+
     }
 }
 
