@@ -18,10 +18,15 @@ public:
     void addFolder(QString);
     void encryptKey(std::string);
     void decryptKey(std::string);
-
-private:
+    void createNewFileFolder(QString);
+    void unhideFile(QString, QString);
+    void unhideFolder(QString, QString);
     std::string getCurrDirectory();
+
+private:   
     std::wstring stringToLPCWSTR(const std::string);
+    LPWSTR stringToLPWSTR(std::string string);
+    void runProcess(LPWSTR cmd);
 };
 
 #endif // BIOMODEL_H

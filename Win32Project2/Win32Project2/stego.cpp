@@ -1,11 +1,16 @@
 #include "stdafx.h"
 
+/****************************************************************************************
+TASK:   Hide data in a basic python looking file
+PRE :   source - file to be hidden
+POST:   data from source is hidden in a python looking file
+****************************************************************************************/
 void obfuscate(std::string source)
 {
     std::string destination = source + ".stego";
     std::string ciphertext;
+
     //load the ciphertext file and put it into a single string:
-    
     std::ifstream in(source, std::ios::binary);
     
     std::stringstream buffer;
@@ -17,10 +22,6 @@ void obfuscate(std::string source)
     buffer << in.rdbuf();
     ciphertext = buffer.str();
 
-    //CryptoPP::FileSource fs(source.c_str(), false, new CryptoPP::StringSink (ciphertext));
-    //fs.PumpAll();
-    //std::cout << ciphertext << std::endl << std::endl;
-
     //get the length of the ciphertext string
     int cipherlength = ciphertext.length();
     int arraylength = cipherlength / 8;
@@ -29,7 +30,7 @@ void obfuscate(std::string source)
 
     int cur = 0;
 
-    for (int i = 0; i <= arraylength; i++)//changed <= to <
+    for (int i = 0; i <= arraylength; i++)
     {
         
         cipherarray[i] = ciphertext.substr(cur, 8);
@@ -70,15 +71,29 @@ void obfuscate(std::string source)
     }
 }
 
-void removeSubstrs(std::string& s, std::string& p)
+/****************************************************************************************
+TASK:   Remove all instances of a pattern from string
+PRE :   string - target string
+        pattern - pattern to remove from string
+POST:   all instances of pattern are removed from string
+CITATION: Following function was adapted from
+http://stackoverflow.com/questions/32435003/how-to-remove-all-substrings-from-a-string
+By Deadlock
+****************************************************************************************/
+void removeSubstrs(std::string& string, std::string& pattern)
 {
-    std::string::size_type n = p.length();
-    for (std::string::size_type i = s.find(p);
+    std::string::size_type pEnd = pattern.length();
+    for (std::string::size_type i = string.find(pattern);
         i != std::string::npos;
-        i = s.find(p))
-        s.erase(i, n);
+        i = string.find(pattern))
+        string.erase(i, pEnd);
 }
 
+/****************************************************************************************
+TASK:   Unhide data from python looking file
+PRE :   source - hidden data to be unhidden
+POST:   source data is retrived from hidden file
+****************************************************************************************/
 void deobfuscate(std::string source)
 {
     std::string destination = source.substr(0, source.find(".stego"));

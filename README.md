@@ -40,4 +40,3 @@ Running Bio-guised (As of 12/5/2016)
   5.  Clicking on the "Add File" button will open a file navigation window allowing you to choose a file to be hidden using the application.  Clicking on the "Add Folder" button brings up a file navigation window that allows the user to choose an entire directory of files to add to the application.
   6.  When done selecting the desired file the explorer will close and the file will be moved to the bioguised-testfolder located in the same directory as “Bio-guised.exe".
   7.  To make the data added to the application inaccessable to others, the application can be closed manually using the close button, or it will automattically close when the USB scanner device is disconnected, encrypting and obfuscation the data until your identity is verified using the scanner next time.
-
