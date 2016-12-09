@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Bio-guised</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="LPinky">
@@ -25,6 +25,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="default">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="LRing">
@@ -239,7 +242,7 @@
      <x>0</x>
      <y>0</y>
      <width>569</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
