@@ -55,7 +55,7 @@
   <connection>
    <sender>Register</sender>
    <signal>clicked()</signal>
-   <receiver>Register</receiver>
+   <receiver>FingerprintScanPopup</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -63,8 +63,8 @@
      <y>215</y>
     </hint>
     <hint type="destinationlabel">
-     <x>275</x>
-     <y>215</y>
+     <x>199</x>
+     <y>149</y>
     </hint>
    </hints>
   </connection>

@@ -16,11 +16,13 @@ SOURCES += main.cpp\
     fingerprintscanpopup.cpp \
     bioguised.cpp \
     biomodel.cpp \
+    connectionthread.cpp
 
 HEADERS  += mainwindow.h \
     fingerprintscanpopup.h \
     bioguised.h \
     biomodel.h \
+    connectionthread.h
 
 
 FORMS    += mainwindow.ui \

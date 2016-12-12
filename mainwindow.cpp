@@ -2,28 +2,52 @@
 #include "ui_mainwindow.h"
 #include "bioguised.h"
 #include "fingerprintscanpopup.h"
+#include "connectionthread.h"
+#include <QtCore>
 #include <QMessageBox>
 #include <QtSerialPort/QtSerialPort>
 #include <QCloseEvent>
-#include "stdio.h"
+#include <QTime>
 
 FingerprintScanPopup *fingerprints;
+BioGuised *bioGuised;
+
 bool positions[10] = {false};
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
     {
-    QByteArray fingerInput;
-    char buffer[5];
-    int i;
-    fingerprints = new FingerprintScanPopup[10];
 
-    for(i = 0; i < FINGERS && positions[i] == false; i++){
-        if(positions[i]){
-            on_RegisterButton_clicked();
-        }
+    ui->setupUi(this);
+    connect(this, SIGNAL(window_loaded()), this, SLOT(gatherInfo()), Qt::ConnectionType(Qt::QueuedConnection | Qt::UniqueConnection));
     }
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+void MainWindow::closeEvent (QCloseEvent *event)
+{
+    QMainWindow::closeEvent(event);
+    MainWindow::showMinimized();
+}
+void MainWindow::showEvent(QShowEvent *ev)
+{
+    QMainWindow::showEvent(ev);
+    emit window_loaded();
+}
+
+
+void MainWindow::gatherInfo(){
+
+    int i, bytes_available;
+    ConnectionThread connection;
+    fingerprints = new FingerprintScanPopup[10];
+    bioGuised = new BioGuised;
+
+
+
     // Initialize Serial
     QSerialPort serial;
     serial.setPortName("COM6");
@@ -33,57 +57,50 @@ MainWindow::MainWindow(QWidget *parent) :
     serial.setParity(QSerialPort::NoParity);
     serial.setStopBits(QSerialPort::OneStop);
     serial.setFlowControl(QSerialPort::NoFlowControl);
+    qDebug() << "connected";
 
-//    for(i = 0; i < FINGERS; i++){
-//        while(!serial.isWritable());
-//        QByteArray index("n");
-//        serial.write(index);
+    //delay(500);
 
-//        fingerInput.prepend("\0");
-//        qDebug() << fingerInput.data();
-//        while(!serial.isReadable());
-       // printf("%s", serial.readAll().data());
-    qDebug() << serial.readAll().data();
- //   memcpy(positions,)
-//        if(*fingerInput.data() != '\n'){
-//            positions[i] = true;
-//            qDebug() << positions[i];
-//        }
+    while(!serial.isWritable());
+    QByteArray index("n");
+    serial.write(index);
 
-//    }
+    for(int i = 0; i < FINGERS; i++){
+        do{
+            serial.waitForReadyRead(10);
+            bytes_available = serial.bytesAvailable();
+        }while(bytes_available <= 0);
 
-    for(i = 0; i < FINGERS && positions[i] == false; i++){
+        QByteArray byte_array = serial.read(bytes_available);
+        qDebug() << byte_array;
+        char *rawData = byte_array.data();
+        int data = (int)*rawData;
+        if(data == 1){
+            positions[i] = true;
+        }
+        else{
+            positions[i] = false;
+        }
+
+
+        if(serial.flush())
+        {
+            qDebug() << "flushed ok" << endl;
+        }
+    }
+    serial.close();
+    connection.start();
+
+
+    i = 0;
+    int flag = 0;
+    do{
         if(positions[i]){
             on_RegisterButton_clicked();
+            flag = 1;
         }
-    }
-    if(serial.flush())
-        {
-            qDebug() << "ok" << endl;
-        }
-    qDebug() <<"value sent!!! "<< endl;
-    serial.close();
-        ui->setupUi(this);
+    }while( i < FINGERS && positions[i++] == false && flag == 0);
 
-
-    }
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-void MainWindow::closeEvent (QCloseEvent *event)
-{
-//    QMessageBox::StandardButton resBtn = QMessageBox::question( this, "",
-//                                                                tr("Are you sure?\n"),
-//                                                                QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
-//                                                                QMessageBox::Yes);
-//    if (resBtn != QMessageBox::Yes) {
-//        event->ignore();
-//    } else {
-//        event->accept();
-//    }
-    MainWindow::showMinimized();
 }
 
 void MainWindow::on_RegisterButton_clicked()
@@ -97,9 +114,10 @@ void MainWindow::on_RegisterButton_clicked()
             return;
         }
     }
-    MainWindow::close();
-    BioGuised *bioGuised = new BioGuised();
+
+    MainWindow::hide();
     bioGuised->show();
+
 }
 
 
@@ -234,4 +252,14 @@ void MainWindow::on_RPinky_clicked()
         ;
     }
 }
+
+void MainWindow::delay( int millisecondsToWait )
+{
+    QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
+    while( QTime::currentTime() < dieTime )
+    {
+        QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );
+    }
+}
+
 

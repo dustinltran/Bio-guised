@@ -15,15 +15,24 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+
+    void delay(int);
     ~MainWindow();
 
+protected:
+      void showEvent(QShowEvent *ev);
+
+signals:
+      void window_loaded();
+
 private slots:
-    void on_LPinky_clicked();
+    void gatherInfo();
+
+    void closeEvent(QCloseEvent *bar);
 
     void on_RegisterButton_clicked();
 
-    void on_RPinky_clicked();
-    void closeEvent(QCloseEvent *bar);
+    void on_LPinky_clicked();
 
     void on_LRing_clicked();
 
@@ -40,6 +49,8 @@ private slots:
     void on_RMiddle_clicked();
 
     void on_RRing_clicked();
+
+    void on_RPinky_clicked();
 
 private:
     Ui::MainWindow *ui;

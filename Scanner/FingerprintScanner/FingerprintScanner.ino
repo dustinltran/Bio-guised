@@ -6,8 +6,10 @@
 #include <Adafruit_Fingerprint.h>
 #include <SoftwareSerial.h>
 
-uint8_t id;
+#define FINGERS 10
+#define DEBUG 0 //Set to 0 for no debug
 
+uint8_t id;
 uint8_t getFingerprintEnroll();
 
 // Software serial for when you dont have a hardware serial port
@@ -16,7 +18,7 @@ uint8_t getFingerprintEnroll();
 // On Leonardo/Micro/Yun, use pins 8 & 9. On Mega, just grab a hardware serialport 
 SoftwareSerial mySerial(2, 3);
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
-char slots[10]; //
+char slots[10] = {0}; //
 
 // On Leonardo/Micro or others with hardware serial, use those! #0 is green wire, #1 is white
 //Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
@@ -34,53 +36,61 @@ void setup()
   
   if (finger.verifyPassword()) {
     Serial.println("Found fingerprint sensor!");
+    for(int i = 0; i < FINGERS; i++){
+      if(finger.loadModel(i + 1) == FINGERPRINT_OK){
+        slots[i] = 1;
+      }
+      if(DEBUG){
+        Serial.print("slot");
+        Serial.print(i, DEC);
+        Serial.print(": ");
+        Serial.println(slots[i], DEC);
+      }
+    }
   } else {
     Serial.println("Did not find fingerprint sensor :(");
     while (1);
   }
+  
 }
 
 void loop()  
 {
   uint8_t i = 0;
-  int choice = -1;
+  int choice;
   int registered;
   int test;
-//  while(i < 10){
-//    if(finger.loadModel(i + 1) == FINGERPRINT_OK){
-//      slots[i] = 1;
-//      while( ! (test = Serial.read() - '0') != i){
-//        Serial.println(test);
-//      }
-//      while( ! Serial.availableForWrite());
-//      Serial.write(slots[i]);
-//    }
-//    else{
-//      slots[i] = 0;
-//    }
-//    i++;
-//  }
 
-  while( !Serial.read() == 'n');
-  while( ! Serial.availableForWrite());
-  Serial.write(slots, 10);
+  choice = -1;
   while (choice == -1){
     choice = Serial.read();
   }
   switch(choice){
     case 'r': registered = registerFingerprints();
-              if(registered == 255)
-                while(! Serial.availableForWrite())
-                 Serial.write("d");
+              if(registered == 255){
+                //while(! Serial.availableForWrite());
+              }
             break;
     case 'v': verifyFingerprints();
             break;
+    case 'n': writeFingerprints();
+              break;
    default: break;
   }
 
 }
 
-void registerFingerprints(){
+void writeFingerprints(){
+  for(int i = 0; i < FINGERS; i++){
+    while(!Serial.availableForWrite());
+        Serial.write(slots[i]);
+       // Serial.println(slots[i]);
+        delay(15);
+
+  }
+  
+}
+uint8_t registerFingerprints(){
   uint8_t success = 0;
   Serial.println("Ready to enroll a fingerprint! Please Type in the ID # you want to save this finger as...");
   id = readnumber();
@@ -229,6 +239,8 @@ uint8_t getFingerprintEnroll() {
     Serial.println("Unknown error");
     return p;
   }   
+
+  slots[id] = 1;
 
   return 255;
   
