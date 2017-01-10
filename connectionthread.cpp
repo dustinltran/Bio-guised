@@ -1,5 +1,6 @@
 #include "connectionthread.h"
 #include <QtSerialPort/QtSerialPort>
+#include <QtCore>
 #include <QTime>
 
 ConnectionThread::ConnectionThread()
@@ -19,6 +20,22 @@ void ConnectionThread::run()
 
         if(availableport.isOpen()){
             //DEBUG MODE ON
+            while(!serial.isWritable());
+            QByteArray index("v");
+            serial.write(index);
+            do{
+                serial.waitForReadyRead(1000);
+                bytes_available = serial.bytesAvailable();
+            }while(bytes_available <= 0);
+
+            QByteArray byte_array = serial.read(bytes_available);
+            qDebug() << byte_array;
+
+            char *rawData = byte_array.data();
+            int data = (int)*rawData;
+
+            if(data > 0 )
+            bioGuised->show();
             delay(5000);
         }
         else{

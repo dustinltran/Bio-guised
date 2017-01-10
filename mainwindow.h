@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+
 #define FINGERS 10
 
 namespace Ui {
@@ -15,7 +16,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-
+    void run();
     void delay(int);
     ~MainWindow();
 

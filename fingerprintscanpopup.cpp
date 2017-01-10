@@ -1,6 +1,6 @@
 #include "fingerprintscanpopup.h"
 #include "ui_fingerprintscanpopup.h"
-
+#include "connectionthread.h"
 #include <QtSerialPort/QtSerialPort>
 #include <QTime>
 
@@ -21,7 +21,7 @@ FingerprintScanPopup::~FingerprintScanPopup()
 
 bool FingerprintScanPopup::registerPrint(int print){
     char fingerPrint[4];
-    int retry = 0;
+    int retry = 0, bytes_available;
     bool read = false;
     QSerialPortInfo info("COM6");
     // Check info of the port
@@ -62,20 +62,18 @@ bool FingerprintScanPopup::registerPrint(int print){
             //Send Alert
         }
         retry = 0;
-        if (serial.bytesToWrite() > 0)
-        {
-            serial.flush();
-            if(serial.waitForBytesWritten(1000))
-            {
-                qDebug() << "data has been send" << endl;
-                while(serial.waitForReadyRead(-1)){
-                    if(serial.readAll().data()[1] == 'n')
-                        qDebug() << "read ME";
-                         bool read = true;
-                }
-            }
 
-        }
+                serial.waitForReadyRead(20000);
+                bytes_available = serial.bytesAvailable();
+
+            QByteArray byte_array = serial.read(bytes_available);
+            char *rawData = byte_array.data();
+            qDebug() << *rawData;
+            if((int)*rawData != -1)
+                         bool read = true;
+
+           qDebug() << read;
+
         if(serial.flush())
             {
                 qDebug() << "ok" << endl;

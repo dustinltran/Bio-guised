@@ -4,6 +4,7 @@
 #include "biomodel.h"
 #include "bioguised.h"
 #include "thread"
+#include "connectionthread.h"
 
 
 int main(int argc, char *argv[])
@@ -14,8 +15,8 @@ int main(int argc, char *argv[])
     w.show();
 
     BioModel* bioModel = new BioModel(); //Need for use of functions from biomodel
-
-    
+    bioModel->generateKey();
+    bioModel->initializeDirectory();
     
     return a.exec();
 }

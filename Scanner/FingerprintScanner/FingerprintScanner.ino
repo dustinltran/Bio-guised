@@ -36,6 +36,9 @@ void setup()
   
   if (finger.verifyPassword()) {
     Serial.println("Found fingerprint sensor!");
+    if(1){
+      finger.emptyDatabase();
+    }
     for(int i = 0; i < FINGERS; i++){
       if(finger.loadModel(i + 1) == FINGERPRINT_OK){
         slots[i] = 1;
@@ -68,16 +71,33 @@ void loop()
   switch(choice){
     case 'r': registered = registerFingerprints();
               if(registered == 255){
-                //while(! Serial.availableForWrite());
+                while(! Serial.availableForWrite());
+                Serial.write(registered);
               }
             break;
     case 'v': verifyFingerprints();
             break;
     case 'n': writeFingerprints();
               break;
+    case 'k': sendKey();
+              break;
    default: break;
   }
 
+}
+
+void sendKey(){
+  for(int i = 0; i < FINGERS; i++){
+    if(slots[i] == 1){
+      while(!Serial.availableForWrite());
+   //   Serial.write(finger.getImage((uint8_t)i + 1), DEC);
+      
+    }
+    if((i == (FINGERS - 1)) && slots[i] == 0){
+      Serial.print("no key");
+    }
+  }
+    
 }
 
 void writeFingerprints(){
@@ -250,11 +270,14 @@ uint8_t getFingerprintEnroll() {
  * PRE:
  * POST:
  */
-void verifyFingerprints()                    // run over and over again
+uint16_t verifyFingerprints()                    // run over and over again
 {
-  
-  getFingerprintIDez();
+  uint16_t id;
+  id = getFingerprintIDez();
+  if (id != -1)
+    Serial.print(id, DEC);
   delay(50);            //don't ned to run this at full speed.
+  return id;
 }
 
 uint8_t getFingerprintID() {
@@ -325,7 +348,7 @@ uint8_t getFingerprintID() {
 }
 
 // returns -1 if failed, otherwise returns ID #
-int getFingerprintIDez() {
+uint16_t getFingerprintIDez() {
   uint8_t p;
   while((p = finger.getImage()) == FINGERPRINT_NOFINGER);
   if (p != FINGERPRINT_OK)  return -1;
